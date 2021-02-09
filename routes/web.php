@@ -13,6 +13,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+//Route untuk geometry
+Route::group(['prefix' => 'geometry'], function() {
+    Route::get('/', function() {
+        return view('geometrys.index');
+    });
+    Route::get('/persegi', function() {
+        return view('geometrys.pages.persegi');
+    });
+    Route::get('/persegipanjang', function() {
+        return view('geometrys.pages.persegipanjang');
+    });
+    Route::get('/segitiga', function() {
+        return view('geometrys.pages.segitiga');
+    });
+    Route::get('/kubus', function() {
+        return view('geometrys.pages.kubus');
+    });
+    Route::get('/balok', function() {
+        return view('geometrys.pages.balok');
+    });
+    Route::get('/prisma', function() {
+        return view('geometrys.pages.prisma');
+    });
 });
