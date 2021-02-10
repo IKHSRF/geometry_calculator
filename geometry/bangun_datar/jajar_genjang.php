@@ -50,9 +50,9 @@
                 echo "Ini bukan jajar genjang";
             } else {
                 echo "Hasil hitung luas jajar genjang adalah sebagai berikut:<br />";
-                echo "Diketahui:<br />";
-                echo "alas (a) = $alas<br />";
-                echo "tinggi (t) = $tinggi<br />";
+                echo "Diketahui:<br/>";
+                echo "alas (a) = $alas<br/>";
+                echo "tinggi (t) = $tinggi<br/>";
                 echo "Maka luas jajar genjang adalah L = alas (a) x tinggi (t) = $alas x $tinggi = $luas";
             }
         }
@@ -94,9 +94,9 @@
                 echo "Ini bukan jajar genjang";
             } else {
                 echo "Hasil hitung keliling jajar genjang adalah sebagai berikut:<br />";
-                echo "Diketahui:<br />";
-                echo "alas (a) = $alas<br />";
-                echo "sisi miring (s) = $sisi<br />";
+                echo "Diketahui:<br/>";
+                echo "alas (a) = $alas<br/>";
+                echo "sisi miring (s) = $sisi<br/>";
                 echo "Maka keliling jajar genjang adalah K = 2 x (alas + sisi miring) = 2 x ($alas + $sisi) = $keliling";
             }
         }
