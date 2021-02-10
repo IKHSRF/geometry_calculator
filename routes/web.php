@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 //Route untuk geometry
-Route::group(['prefix' => 'geometry'], function() {
+Route::group(['prefix' => 'geometri'], function() {
     Route::get('/', function() {
         return view('geometrys.index');
     });
