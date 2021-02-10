@@ -9,7 +9,7 @@
     <img src="belah Ketupat.png" alt="belah Ketupat">
     <strong>Keterangan:</strong>
     <p>
-        s = sisi belah ketupat
+        s = sisi belah ketupat <br>
         d1, d2 = diagonal
     </p>
 
@@ -49,9 +49,9 @@
                 echo "Ini bukan belah ketupat";
             } else {
                 echo "Hasil hitung luas belah ketupat adalah sebagai berikut:<br />";
-                echo "Diketahui:<br />";
-                echo "diagonal (d1) = $diagonal_1<br />";
-                echo "diagonal (d2) = $diagonal_2<br />";
+                echo "Diketahui:<br/>";
+                echo "diagonal (d1) = $diagonal_1<br/>";
+                echo "diagonal (d2) = $diagonal_2<br/>";
                 echo "Maka luas belah ketupat adalah L = &#189; x diagonal (d1) x diagonal (d2) = $diagonal_1 x $diagonal_2 = $luas";
             }
         }
@@ -64,7 +64,7 @@
     <form action="./" method="POST" enctype="multipart/form-data">
         <table>
             <tr>
-                <td>Sisi (s)</td>
+                <td>sisi (s)</td>
                 <td>:</td>
                 <td><input type="text" name="sisi" required></td>
             </tr>
@@ -85,9 +85,9 @@
             if ($keliling == 0) {
                 echo "Ini bukan belah ketupat";
             } else {
-                echo "Hasil hitung keliling belah ketupat adalah sebagai berikut:<br />";
-                echo "Diketahui:<br />";
-                echo "sisi (s) = $sisi<br />";
+                echo "Hasil hitung keliling belah ketupat adalah sebagai berikut:<br/>";
+                echo "Diketahui:<br/>";
+                echo "sisi (s) = $sisi<br/>";
                 echo "Maka keliling belah ketupat adalah K = 4 x sisi (s) = 4 x $sisi = $keliling";
             }
         }
