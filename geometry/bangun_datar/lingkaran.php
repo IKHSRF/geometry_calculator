@@ -46,8 +46,9 @@
             
             // menghitung luas lingkaran
             $luas = 3.14 * $jari_jari * $jari_jari;
+            $keliling = 3.14 * 2 * $jari_jari;
 
-            if ($luas == 0) {
+            if ($luas && $keliling == 0) {
                 echo "Ini bukan lingkaran";
             } else {
                 echo "Hasil hitung luas dan keliling lingkaran adalah sebagai berikut:<br />";
@@ -55,17 +56,8 @@
                 echo "π = 3.14 <br/>";
                 echo "jari-jari = $jari_jari <br/>";
                 echo "Maka luas lingkaran adalah L = π x r<sup>2</sup> = 3.14 x r<sup>2</sup> = $luas<br>";
-            }
-
-            // menghitung keliling lingkaran
-            $keliling = 3.14 * 2 * $jari_jari;
-            if ($keliling == 0) {
-                echo "Ini bukan lingkaran";
-            } else {
                 echo "Dan keliling lingkaran (K) = π x 2 x r = 3.14 x 2 x $jari_jari = $keliling";
             }
-        }
-    ?>
 
 
     <h2 align="center">Hitung Luas Lingkaran dan Keliling Dengan Diameter</h2>
@@ -79,7 +71,7 @@
     <form action="./" method="POST" enctype="multipart/form-data">
         <table>
             <tr>
-                <td>Diameter (d)</td>
+                <td>diameter (d)</td>
                 <td>:</td>
                 <td><input type="text" name="d" required></td>
             </tr>
@@ -104,7 +96,7 @@
                 echo "Hasil hitung luas dan keliling lingkaran adalah sebagai berikut:<br />";
                 echo "Diketahui: <br/>";
                 echo "π = 3.14 <br/>";
-                echo "Diameter = $diameter <br/>";
+                echo "diameter = $diameter <br/>";
                 echo "Maka luas lingkaran adalah L = π x (d/2) * (d/2) = 3.14 x ($diameter/2) * ($diameter/2) = $luas2<br>";
             }
 
