@@ -1,57 +1,301 @@
-@extends('geometrys.layout')
- 
-@section('content')
-<div class="container">
-    <div class="row justify-content-around">
-        <div class="card pr-2" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">Persegi</h5>
-                <p class="card-text">Kalkulator untuk menghitung luas dan keliling persegi</p>
-                <a href="/geometri/persegi" class="btn btn-primary">Hitung</a>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Geometri</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet" />
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
+    <link href="assets/vendor/venobox/venobox.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/owl.carousel/assets/owl.carousel.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+
+  </head>
+
+  <body>
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex align-items-center">
+      <div
+        class="container position-relative"
+        data-aos="fade-up"
+        data-aos-delay="100">
+        <div class="row justify-content-center">
+          <div class="col-xl-7 col-lg-9 text-center">
+            <h1>Kalkulator Geometri</h1>
+            <h2>Menghitung luas dan keliling bangun ruang & datar</h2>
+          </div>
+        </div>
+        
+        <!-- data bangun ruang-->
+        <div class="row icon-boxes">
+          <div
+            class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0"
+            data-aos="zoom-in"
+            data-aos-delay="200">
+            <div class="icon-box">
+              <div class="icon"><i class="ri-stack-line"></i></div>
+              <h4 class="title"><a href="/geometri/kubus">Kubus</a></h4>
+              <p class="description">
+               Menghitung luas dan keliling kubus
+              </p>
             </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0"
+            data-aos="zoom-in"
+            data-aos-delay="300">
+            <div class="icon-box">
+              <div class="icon"><i class="ri-palette-line"></i></div>
+              <h4 class="title"><a href="/geometri/balok">Balok</a></h4>
+              <p class="description">
+                Menghitung luas dan keliling balok
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0"
+            data-aos="zoom-in"
+            data-aos-delay="400">
+            <div class="icon-box">
+              <div class="icon"><i class="ri-command-line"></i></div>
+              <h4 class="title"><a href="/geometri/tabung">Tabung</a></h4>
+              <p class="description">
+                Mehitung luas dan keliling tabung
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0"
+            data-aos="zoom-in"
+            data-aos-delay="500">
+            <div class="icon-box">
+              <div class="icon"><i class="ri-fingerprint-line"></i></div>
+              <h4 class="title"><a href="/geometri/kerucut">Kerucut</a></h4>
+              <p class="description">
+                Menghitung luas dan keliling kerucut
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row icon-boxes">
+          <div
+            class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0"
+            data-aos="zoom-in"
+            data-aos-delay="200">
+            <div class="icon-box">
+              <div class="icon"><i class="ri-stack-line"></i></div>
+              <h4 class="title"><a href="/geometri/limassegitiga">Limas Segitiga</a></h4>
+              <p class="description">
+               Menghitung luas dan keliling limas segitga
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0"
+            data-aos="zoom-in"
+            data-aos-delay="300">
+            <div class="icon-box">
+              <div class="icon"><i class="ri-palette-line"></i></div>
+              <h4 class="title"><a href="/geometri/prisma">Prisma</a></h4>
+              <p class="description">
+                Menghitung luas dan keliling prisma
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0"
+            data-aos="zoom-in"
+            data-aos-delay="400">
+            <div class="icon-box">
+              <div class="icon"><i class="ri-command-line"></i></div>
+              <h4 class="title"><a href="/geometri/bola">Bola</a></h4>
+              <p class="description">
+                Mehitung luas dan keliling bola
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0"
+            data-aos="zoom-in"
+            data-aos-delay="500">
+            <div class="icon-box">
+              <div class="icon"><i class="ri-fingerprint-line"></i></div>
+              <h4 class="title"><a href="/geometri/limassegiempat">Limas Segiempat</a></h4>
+              <p class="description">
+                Menghitung luas dan keliling limas segiempat
+              </p>
+            </div>
+          </div>
         </div>
 
-        <div class="card pr-2" style="width: 18rem;">
-        <div class="card-body">
-            <h5 class="card-title">Persegi Panjang</h5>
-            <p class="card-text">Kalkulator untuk menghitung luas dan keliling persegi panjang</p>
-            <a href="/geometri/persegipanjang" class="btn btn-primary">Hitung</a>
+
+         <!-- data bangun datar-->
+         <div class="row icon-boxes">
+          <div
+            class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0"
+            data-aos="zoom-in"
+            data-aos-delay="200">
+            <div class="icon-box">
+              <div class="icon"><i class="ri-stack-line"></i></div>
+              <h4 class="title"><a href="/geometri/persegi">Persegi</a></h4>
+              <p class="description">
+               Menghitung luas dan keliling persegi
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0"
+            data-aos="zoom-in"
+            data-aos-delay="300">
+            <div class="icon-box">
+              <div class="icon"><i class="ri-palette-line"></i></div>
+              <h4 class="title"><a href="/geometri/persegipanjang">Persegi panjang</a></h4>
+              <p class="description">
+                Menghitung luas dan keliling persegi panjang
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0"
+            data-aos="zoom-in"
+            data-aos-delay="400">
+            <div class="icon-box">
+              <div class="icon"><i class="ri-command-line"></i></div>
+              <h4 class="title"><a href="/geometri/segitiga">segitiga</a></h4>
+              <p class="description">
+                Mehitung luas dan keliling segitiga
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0"
+            data-aos="zoom-in"
+            data-aos-delay="500">
+            <div class="icon-box">
+              <div class="icon"><i class="ri-fingerprint-line"></i></div>
+              <h4 class="title"><a href="/geometri/jajargenjang">Jajar Genjang</a></h4>
+              <p class="description">
+                Menghitung luas dan keliling jajar genjang
+              </p>
+            </div>
+          </div>
         </div>
+        
+        <div class="row icon-boxes">
+          <div
+            class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0"
+            data-aos="zoom-in"
+            data-aos-delay="200">
+            <div class="icon-box">
+              <div class="icon"><i class="ri-stack-line"></i></div>
+              <h4 class="title"><a href="/geometri/belahketupat">Belah Ketupat</a></h4>
+              <p class="description">
+               Menghitung luas dan keliling belah ketupat
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0"
+            data-aos="zoom-in"
+            data-aos-delay="300">
+            <div class="icon-box">
+              <div class="icon"><i class="ri-palette-line"></i></div>
+              <h4 class="title"><a href="/geometri/layanglayang">Layang</a></h4>
+              <p class="description">
+                Menghitung luas dan keliling layang-layang
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0"
+            data-aos="zoom-in"
+            data-aos-delay="400">
+            <div class="icon-box">
+              <div class="icon"><i class="ri-command-line"></i></div>
+              <h4 class="title"><a href="/geometri/trapesium">Trepesium</a></h4>
+              <p class="description">
+                Mehitung luas dan keliling trapesium
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0"
+            data-aos="zoom-in"
+            data-aos-delay="500">
+            <div class="icon-box">
+              <div class="icon"><i class="ri-fingerprint-line"></i></div>
+              <h4 class="title"><a href="/geometri/lingkaran">Lingkaran</a></h4>
+              <p class="description">
+                Menghitung luas dan keliling lingkarang
+              </p>
+            </div>
+          </div>
         </div>
 
-        <div class="card pr-2" style="width: 18rem;">
-        <div class="card-body">
-            <h5 class="card-title">Segitiga</h5>
-            <p class="card-text">Kalkulator untuk menghitung luas dan keliling segitiga</p>
-            <a href="/geometri/segitiga" class="btn btn-primary">Hitung</a>
-        </div>
-        </div>
-    </div>
 
-    <div class="row justify-content-around mt-4">
-        <div class="card pr-2" style="width: 18rem;">
-        <div class="card-body">
-            <h5 class="card-title">Kubus</h5>
-            <p class="card-text">Kalkulator untuk menghitung luas dan keliling kubus</p>
-            <a href="/geometri/kubus" class="btn btn-primary">Hitung</a>
-        </div>
-        </div>
+      </div>
+    </section>
 
-        <div class="card pr-2" style="width: 18rem;">
-        <div class="card-body">
-            <h5 class="card-title">Balok</h5>
-            <p class="card-text">Kalkulator untuk menghitung luas dan keliling balok</p>
-            <a href="/geometri/balok" class="btn btn-primary">Hitung</a>
-        </div>
-        </div>
 
-        <div class="card pr-2" style="width: 18rem;">
-        <div class="card-body">
-            <h5 class="card-title">Prisma</h5>
-            <p class="card-text">Kalkulator untuk menghitung luas dan keliling prisma</p>
-            <a href="/geometri/prisma" class="btn btn-primary">Hitung</a>
-        </div>
-        </div>
-    </div>
-</div>
-@endsection
+    
+    </footer>
+    <!-- End Footer -->
+
+    <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+    <script src="assets/vendor/counterup/counterup.min.js"></script>
+    <script src="assets/vendor/venobox/venobox.min.js"></script>
+    <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
