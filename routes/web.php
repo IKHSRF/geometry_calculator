@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 //Route untuk geometry
+Route::get('/', function() {
+    return view('geometrys.index');
+});
 Route::group(['prefix' => 'geometri'], function() {
     Route::get('/', function() {
         return view('geometrys.index');
@@ -26,6 +29,12 @@ Route::group(['prefix' => 'geometri'], function() {
     });
     Route::get('/segitiga', function() {
         return view('geometrys.pages.segitiga');
+    });
+    Route::get('/jajargenjang', function() {
+        return view('geometrys.pages.jajargenjang');
+    });
+    Route::get('/belahketupat', function() {
+        return view('geometrys.pages.belahketupat');
     });
     Route::get('/kubus', function() {
         return view('geometrys.pages.kubus');

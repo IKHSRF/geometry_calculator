@@ -1,51 +1,96 @@
 @extends('geometrys.layout')
  
-@section('content')
-<div class="container">
-<a href="/geometri" class="btn btn-primary" align="center">Kembali</a>
-    <!-- menghitung luas persegi -->
-    <div class="class row justify-content-around">
-        <div class="card pr-2" style="width: 30rem;">
-            <div class="card-body">
-                <h2 align="center" class="mb-3">Hitung Luas dan Keliling Persegi</h2>
-                <strong>Rumus: luas (L) = sisi (s) x sisi (s)</strong><br>
-                <strong> Rumus: keliling (k) = sisi (s) x 4</strong>
-                <form action="/geometri/persegihitung" method="POST" enctype="multipart/form-data" class="mt-3">
-                    <table>
-                        <tr>
-                            <td>sisi (s)</td>
-                            <td>:</td>
-                            <td><input type="text" name="s" required></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td><input type="submit" name="submit" value="Hitung" class="btn btn-success"></td>
-                        </tr>
-                    </table>
-                </form>
-
-                <?php
-                    if(isset($_POST['submit'])){
-                        $sisi = $_POST['s'];
-                        
-                        // menghitung luas persegi dan keliling
-                        $luas = $sisi * $sisi;
-                        $keliling = 4 * $sisi;
-
-                        if ($luas && $keliling == 0) {
-                            echo "Ini bukan persegi";
-                        } else {
-                            echo "Hasil hitung luas dan keliling persegi adalah sebagai berikut:<br/>";
-                            echo "Diketahui:<br/>";
-                            echo "sisi (s) = $sisi<br/>";
-                            echo "Maka luas persegi adalah L = sisi x sisi = $sisi x $sisi = $luas <br/>";
-                            echo "Dan keliling persegi adalah K = 4 x sisi (s) = 4 x $sisi = $keliling";
-                        }
-                    }
-                ?>
-            </div>
+@section('header')
+  <section id="hero" class="d-flex align-items-center">
+    <div
+        class="container position-relative"
+        data-aos="fade-up"
+        data-aos-delay="100">
+      <a href="/geometri" class="btn btn-primary mb-3" align="center">Kembali</a>
+      <div class="row justify-content-center">
+        
+        <div class="col-xl-7 col-lg-9 text-center">
+          <h1>Persegi</h1>
+          <h2>
+            Persegi adalah bangun datar 2 dimensi yang dibentuk oleh empat
+            sisi yang sama panjang dan keempat titik sudutnya membentuk sudut
+            siku-siku (90º).
+          </h2>
         </div>
-    </div>    
-</div>
+      </div>
+    </div>
+  </section>
+@endsection
+
+
+@section('content')
+<main id="main">
+      <!-- ======= Contact Section ======= -->
+      <section id="contact" class="contact">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <div class="row">
+              <div class="col-sm">
+                <strong>Rumus:</strong><br />
+                <i>luas (L) = sisi (s) x sisi (s)</i><br />
+                <i>keliling (k) = sisi (s) x 4</i>
+              </div>
+              <div class="col-sm">
+                <strong>Keterangan: </strong><br />
+                <i>s = sisi persegi</i>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-5 d-flex justify-content-center">
+            <div class="col-lg-8 mt-5 mt-lg-0">
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="Sisi"
+                  id="s"
+                  placeholder="Sisi"
+                />
+              </div>
+              <div class="text-center">
+                <button onclick="hitung()" class="btn btn-primary">
+                  Hitung
+                </button>
+              </div>
+              <div class="form-row d-flex justify-content-center">
+                <div class="col-lg-4">
+                  <div class="info">
+                    <div class="email">
+                      <i class="icofont-envelope"></i>
+                      <h4>Keliling</h4>
+                      <p id="keliling"></p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-4">
+                  <div class="info">
+                    <div class="email">
+                      <i class="icofont-envelope"></i>
+                      <h4>Luas</h4>
+                      <p id="luas"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Contact Section -->
+    </main>
+    <script type="text/javascript">
+      var sisi = document.getElementById("s");
+      var luas = document.getElementById("luas");
+      var keliling = document.getElementById("keliling");
+      function hitung() {
+        luas.textContent = Number(sisi.value) * Number(sisi.value);
+        keliling.textContent = Number(sisi.value) * 4;
+      }
+    </script>
 @endsection

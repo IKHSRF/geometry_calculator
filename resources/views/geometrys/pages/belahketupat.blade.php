@@ -7,37 +7,36 @@
         <div class="card pr-2" style="">
             <div class="card-body">
                 <a href="/geometri" class="btn btn-primary mb-3" align="center">Kembali</a>
-                <h3>Segitiga</h3>
-                <p>Segitiga adalah bangun datar yang terdiri dari 3 sisi garis lurus dengan 3 titik sudut yang berjumlah 180º.</p>
+                <h3>Belah Ketupat</h3>
+                <p>Belah Ketupat adalah bangun datar 2 dimensi yang dibentuk oleh 4 buah sisi yang sama panjang dan mempunyai 2 pasang sudut bukan siku-siku dengan sudut yang saling berhadapan mempunyai besar sama.</p>
                 <div class="row">
                     <div class="col-sm">
-                        <strong>Rumus:</strong></br>
-                        <i>luas (L) = &#189; x (alas x tinggi)</i></br>
-                        <i>keliling (k) = sisi a + sisi b + sisi c</i>
+                        <strong>Rumus:</strong><br>
+                        <i>luas (L) = &#189; x diagonal (d1) x diagonal (d2)</i><br>
+                        <i>keliling (k) = 4 x sisi</i>
                     </div>
                     <div class="col-sm">
-                        <strong>Keterangan:</strong><br>
+                        <strong>Keterangan: </strong><br>
                         <i>
-                            a = alas <br>
-                            t = tinggi, tinggi segitiga membentuk sudut 90° terhadap alasnya.<br>
-                            b, c = adalah sisi lain segitiga
+                        s = sisi belah ketupat <br>
+                        d1, d2 = diagonal
                         </i>
                     </div>
                  </div>
                 <br>
-                <h3>Luas Segitiga</h3>
+                <h3>Luas Belah Ketupat</h3>
                 <div class="row">
                     <div class="col-sm">
                         <table>
                             <tr>
-                                <td><label for="alas"><i>alas (a)</i><label></td>
+                                <td><label for="d1"><i>diagonal (d1)</i></td>
                                 <td>:</td>
-                                <td><input type="number" id="alas" required min="1" minlength="1" maxlength="21"></td>
+                                <td><input type="number" id="d1" required min="1" minlength="1" maxlength="21"></td>
                             </tr>
                             <tr>
-                                <td><label for="tinggi"><i>tinggi (t)</i><label></td>
+                                <td><label for="d2"><i>diagonal (d2)</i></td>
                                 <td>:</td>
-                                <td><input type="number" id="tinggi" required min="1" minlength="1" maxlength="21"></td>
+                                <td><input type="number" id="d2" required min="1" minlength="1" maxlength="21"></td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -45,38 +44,27 @@
                                 <td><button onclick="hitung1()" class="btn btn-primary mt-3">Hitung</button></td>
                             </tr>
                         </table>
-
                     </div>
                     <div class="col-sm">
                         <table>
                             <tr>
-                                <td><label for="luas"><i>luas (L)</i><label></td>
+                                <td><label for="luas"><i>luas (L)</i></td>
                                 <td>:</td>
                                 <td><input type="text" id="luas" disabled readonly></td>
                             </tr>
                         </table>
                     </div>
                 </div>
-                </br>
-                </br>
-                <h3>Keliling Segitiga</h3>
+                <br>
+                <br>
+                <h3>Keliling Belah Ketupat</h3>
                 <div class="row">
                     <div class="col-sm">
                         <table>
                             <tr>
-                                <td><label for="a"><i>sisi (a)</i></td>
+                                <td><label for="s"><i>sisi (s)</i></td>
                                 <td>:</td>
-                                <td><input type="number" id="a" required min="1" minlength="1" maxlength="21"></td>
-                            </tr>
-                            <tr>
-                                <td><label for="b"><i>sisi (b)</i></td>
-                                <td>:</td>
-                                <td><input type="number" id="b" required min="1" minlength="1" maxlength="21"></td>
-                            </tr>
-                            <tr>
-                                <td><label for="c"><i>sisi (c)</i></td>
-                                <td>:</td>
-                                <td><input type="number" id="c" required></td>
+                                <td><input type="number" id="s" required min="1" minlength="1" maxlength="21"></td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -101,21 +89,18 @@
 </div>
 
 <script type="text/javascript">
-		var alas = document.getElementById('alas')
-		var tinggi = document.getElementById('tinggi')
+		var d1 = document.getElementById('d1')
+		var d2 = document.getElementById('d2')
 		var luas = document.getElementById('luas')
 		function hitung1() {
-			luas.value = 1/2 * Number(alas.value) * Number(tinggi.value)
+			luas.value = 1/2 * Number(d1.value) * Number(d2.value)
 		}
 	</script>
 	<script type="text/javascript">
-		var a = document.getElementById('a')
-		var b = document.getElementById('b')
-		var c = document.getElementById('c')
-		keliling = document.getElementById('keliling')
+		var s = document.getElementById('s')
+		var keliling = document.getElementById('keliling')
 		function hitung2() {
-			keliling.value = Number(a.value) + Number(b.value) + Number(c.value)
+			keliling.value = s.value * 4
 		}
 	</script>
-
 @endsection
