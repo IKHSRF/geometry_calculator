@@ -2,101 +2,76 @@
  
 @section('content')
 <div class="container">
-<a href="/geometri" class="btn btn-primary" align="center">Kembali</a>
+    <!-- menghitung luas persegi -->
     <div class="row justify-content-around">
-        <!-- hitung luas persegi panjang -->
-        <div class="card" style="width: 18rem;">
+        <div class="card pr-2" style="">
             <div class="card-body">
-                <h3>Luas Persegi Panjang:</h3>
-                <strong>Rumus: luas (L) = panjang (p) x lebar (l)</strong>
-                <form action="./" method="POST" enctype="multipart/form-data">
-                    <table>
-                        <tr>
-                            <td>panjang (p)</td>
-                            <td>:</td>
-                            <td><input type="text" name="p" required></td>
-                        </tr>
-                        <tr>
-                            <td>lebar (l)</td>
-                            <td>:</td>
-                            <td><input type="text" name="l" required ></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td><input type="submit" name="submit1" value="Hitung"></td>
-                        </tr>
-                    </table>
-                </form>
-
-                <?php
-                    if(isset($_POST['submit1'])){
-                        $panjang = $_POST['p'];
-                        $lebar   = $_POST['l'];
-                        
-                        // menghitung luas persegi panjang
-                        $luas = $panjang * $lebar;
-
-                        if ($luas == 0) {
-                            echo "Ini bukan persegi panjang";
-                        } else {
-                            echo "Hasil hitung luas persegi panjang adalah sebagai berikut:<br />";
-                            echo "Diketahui:<br />";
-                            echo "panjang (p) = $panjang<br />";
-                            echo "lebar (l) = $lebar<br />";
-                            echo "Maka luas persegi panjang adalah L = panjang (p) x lebar (l) = $panjang x $lebar = $luas";
-                        }
+                <a href="/geometri" class="btn btn-primary mb-3" align="center">Kembali</a>
+                <h3>Persegi Panjang</h3>
+                <p>Persegi panjang adalah bangun datar 2 dimensi yang mempunyai 2 pasang sisi sejajar yang sama Panjang dan mempunyai 4 titik sudut siku-siku.</p>
+                <div class="row">
+                    <div class="col-sm">
+                        <strong>Rumus:</strong><br>
+                        <i>luas (L) = panjang (p) x lebar (l)</i><br>
+                        <i>keliling (k) = 2 x (panjang + lebar)</i>
+                    </div>
+                    <div class="col-sm">
+                        <strong>Keterangan:</strong><br>
+                        <i>
+                            p = panjang <br>
+                            l = lebar
+                        </i>
+                    </div>
+                </div>
+                <br>
+                <h3>Luas dan Keliling Persegi Panjang</h3>
+                <div class="row">
+                    <div class="col-sm">
+                        <table>
+                            <tr>
+                                <td><label for="p"><i>panjang (p)</i></label></td>
+                                <td>:</td>
+                                <td><input type="number" id="p" required min="1" minlength="1" maxlength="21"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="l"><i>lebar (l)</i></label></td>
+                                <td>:</td>
+                                <td><input type="number" id="l" required min="1" minlength="1" maxlength="21"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td><button onclick="hitung()" class="btn btn-primary mt-3">Hitung</button></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-sm">
+                        <table>
+                            <tr>
+                                <td><label for="luas"><i>luas (L)</i></label></td>
+                                <td>:</td>
+                                <td><input type="text" id="luas" disabled readonly></td>
+                            </tr>
+                            <tr>
+                                <td><label for="keliling"><i>keliling (k)</i></label></td>
+                                <td>:</td>
+                                <td><input type="text" id="keliling" disabled readonly></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    var	panjang = document.getElementById('p')
+                    var lebar = document.getElementById('l')
+                    var	luas = document.getElementById('luas')
+                    var	keliling =  document.getElementById('keliling')
+                    function hitung() {
+                        luas.value = Number(panjang.value) * Number(lebar.value)
+                        keliling.value = 2 * (Number(panjang.value) + Number(lebar.value))
                     }
-                ?>
-            </div>
-        </div>
-        <!-- hitung keliling persegi panjang -->
-        <div class="card pr-2" style="width: 18rem;">
-            <div class="card-body">
-                <h3>Keliling Persegi Panjang:</h3>
-                <strong>Rumus: keliling (k) = 2 x (panjang + lebar) </strong>
-                <form action="./" method="POST" enctype="multipart/form-data">
-                    <table>
-                        <tr>
-                            <td>panjang (p)</td>
-                            <td>:</td>
-                            <td><input type="text" name="panjang" required></td>
-                        </tr>
-                        <tr>
-                            <td>Lebar (l)</td>
-                            <td>:</td>
-                            <td><input type="text" name="lebar" required ></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td><input type="submit" name="submit2" value="Hitung"></td>
-                        </tr>
-                    </table>
-                </form>
-
-                <?php
-                    if(isset($_POST['submit2'])){
-                        $panjang = $_POST['panjang'];
-                        $lebar   = $_POST['lebar'];
-                        
-                        // menghitung keliling persegi panjang
-                        $keliling = 2 * ($panjang + $lebar);
-
-                        if ($keliling == 0) {
-                            echo "Ini bukan persegi panjang";
-                        } else {
-                            echo "Hasil hitung keliling persegi panjang adalah sebagai berikut:<br />";
-                            echo "Diketahui:<br />";
-                            echo "panjang (p) = $panjang<br />";
-                            echo "lebar (l) = $lebar<br />";
-                            echo "Maka keliling persegi panjang adalah K = 2 x (panjang + lebar) = 2 x ($panjang + $lebar) = $keliling";
-                        }
-                    }
-                ?>
+                </script>
             </div>
         </div>
     </div>
-
 </div>
 @endsection
