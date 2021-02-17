@@ -101,10 +101,6 @@
   var lebar = document.getElementById('l')
   var tinggi = document.getElementById('t')
 
-  var pl = Number(panjang.value) * Number(lebar.value)
-  var pt = Number(panjang.value) * Number(tinggi.value)
-  var lt = Number(lebar.value) * Number(tinggi.value)
-
   var luas = document.getElementById('luas')
   var keliling = document.getElementById('keliling')
   function hitung() {

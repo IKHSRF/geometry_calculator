@@ -63,10 +63,10 @@ Route::group(['prefix' => 'geometri'], function() {
     Route::get('/limaskubus', function() {
         return view('geometrys.pages.limaskubus');
     });
-    Route::get('/prismaempat', function() {
+    Route::get('/prismasegiempat', function() {
         return view('geometrys.pages.prismaempat');
     });
-    Route::get('/prismatiga', function() {
+    Route::get('/prismasegitiga', function() {
         return view('geometrys.pages.prismatiga');
     });
     Route::get('/tabung', function() {
