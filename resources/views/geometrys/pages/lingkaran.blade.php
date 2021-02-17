@@ -8,10 +8,9 @@
     <a href="/geometri" class="btn btn-primary mb-3" align="center">Kembali</a>
     <div class="row justify-content-center">
       <div class="col-xl-7 col-lg-9 text-center">
-        <h1>Persegi Panjang</h1>
+        <h1>Lingkaran</h1>
         <h2>
-          Persegi panjang adalah bangun datar 2 dimensi yang mempunyai 2 pasang
-          sisi sejajar yang sama Panjang dan mempunyai 4 titik sudut siku-siku.
+          Lingkaran adalah bangun datar dua dimensi dibentuk oleh himpunan semua titik yang mempunyai jarak sama dari suatu titik tetap.
         </h2>
       </div>
     </div>
@@ -25,37 +24,40 @@
       <div class="section-title">
         <div class="row">
           <div class="col-sm">
-            <strong>Rumus:</strong><br />
-            <i>luas (L) = panjang (p) x lebar (l)</i><br />
-            <i>keliling (k) = 2 x (panjang + lebar)</i>
+            <strong>Rumus:</strong><br>
+            <i>luas (L) = π x r<sup>2</sup></i><br>
+            <i>keliling (K) = π x 2 x r</i>
           </div>
           <div class="col-sm">
             <strong>Keterangan: </strong><br />
             <i>
-              p = panjang <br />
-              l = lebar
+              P = titik pusat <br>
+              r = jari-jari <br>
+              d = diameter <br>
+              π = konstanta pi (3.14) <br>
             </i>
           </div>
         </div>
       </div>
       <div class="row mt-5 d-flex justify-content-center">
         <div class="col-lg-8 mt-5 mt-lg-0">
+          <strong>Luas Lingkaran</strong><br /><br>
           <div class="form-group">
             <input
               type="number"
               class="form-control"
-              name="Panjang"
-              id="p"
-              placeholder="Panjang"
+              name="r"
+              id="r"
+              placeholder="Jari Jari"
             />
           </div>
           <div class="form-group">
             <input
               type="number"
               class="form-control"
-              name="Lebar"
-              id="l"
-              placeholder="Lebar"
+              name="d"
+              id="d"
+              placeholder="Diameter"
             />
           </div>
           <div class="text-center">
@@ -66,36 +68,38 @@
               <div class="info">
                 <div class="email">
                   <i class="icofont-calculator-alt-2"></i>
-                  <h4>Keliling</h4>
-                  <p id="keliling"></p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4">
-              <div class="info">
-                <div class="email">
-                  <i class="icofont-calculator-alt-2"></i>
                   <h4>Luas</h4>
                   <p id="luas"></p>
                 </div>
               </div>
             </div>
+            <div class="col-lg-4">
+              <div class="info">
+                <div class="email">
+                  <i class="icofont-calculator-alt-2"></i>
+                  <h4>Keliling</h4>
+                  <p id="keliling"></p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
     </div>
   </section>
   <!-- End Contact Section -->
 </main>
 <script type="text/javascript">
-  var panjang = document.getElementById("p");
-  var lebar = document.getElementById("l");
-  var luas = document.getElementById("luas");
-  var keliling = document.getElementById("keliling");
+  var pi7 = 22/7
+  // var pi = 3.14
+  var jarijari = document.getElementById('r')
+  var diameter = document.getElementById('d')
+  var luas = document.getElementById('luas')
+  var keliling = document.getElementById('keliling')
   function hitung() {
-    luas.textContent = Number(panjang.value) * Number(lebar.value);
-    keliling.textContent = 2 * (Number(panjang.value) + Number(lebar.value));
+      diameter.value = jarijari.value * 2
+      luas.textContent = pi7 * Number(jarijari.value * jarijari.value)
+      // luas.value = pi * Number(jarijari.value * jarijari.value)
+      keliling.textContent = pi7 * 2 * Number(jarijari.value) 
   }
 </script>
 @endsection

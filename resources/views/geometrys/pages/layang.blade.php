@@ -8,10 +8,9 @@
     <a href="/geometri" class="btn btn-primary mb-3" align="center">Kembali</a>
     <div class="row justify-content-center">
       <div class="col-xl-7 col-lg-9 text-center">
-        <h1>Segitiga</h1>
+        <h1>Layang - Layang</h1>
         <h2>
-          Segitiga adalah bangun datar yang terdiri dari 3 sisi garis lurus
-          dengan 3 titik sudut yang berjumlah 180º.
+          Layang-layang adalah bangun datar yang dibentuk oleh 2 pasang sisi sama panjang yang saling membentuk sudut yang berbeda.
         </h2>
       </div>
     </div>
@@ -25,39 +24,38 @@
       <div class="section-title">
         <div class="row">
           <div class="col-sm">
-            <strong>Rumus:</strong></br>
-            <i>luas (L) = &#189; x (alas x tinggi)</i></br>
-            <i>keliling (k) = sisi a + sisi b + sisi c</i>
+            <strong>Rumus:</strong><br>
+            <i>luas (L) = &#189; x diagonal (d1) x diagonal (d2)</i><br>
+            <i>keliling (k) = 2 x (a + c)</i>
           </div>
           <div class="col-sm">
             <strong>Keterangan: </strong><br />
             <i>
-              a = alas <br>
-              t = tinggi, tinggi segitiga membentuk sudut 90° terhadap alasnya.<br>
-              b, c = adalah sisi lain segitiga
-          </i>
+              a, b, c, d = sisi layang-layang <br>
+              d1, d2 = diagonal
+            </i>
           </div>
         </div>
       </div>
       <div class="row mt-5 d-flex justify-content-center">
         <div class="col-lg-8 mt-5 mt-lg-0">
-          <strong>Luas Segitiga </strong><br /><br>
+          <strong>Luas Layang-Layang</strong><br /><br>
           <div class="form-group">
             <input
               type="number"
               class="form-control"
-              name="alas"
-              id="alas"
-              placeholder="Alas"
+              name="d1"
+              id="d1"
+              placeholder="Diagonal 1"
             />
           </div>
           <div class="form-group">
             <input
               type="number"
               class="form-control"
-              name="tinggi"
-              id="tinggi"
-              placeholder="Tinggi"
+              name="d2"
+              id="d2"
+              placeholder="Diagonal 2"
             />
           </div>
           <div class="text-center">
@@ -78,7 +76,7 @@
     </div>
     <div class="row mt-5 d-flex justify-content-center">
         <div class="col-lg-8 mt-5 mt-lg-0">
-          <strong>Keliling Segitiga </strong><br /><br>
+          <strong>Keliling Jajar Genjang </strong><br /><br>
           <div class="form-group">
             <input
               type="number"
@@ -86,15 +84,6 @@
               name="a"
               id="a"
               placeholder="sisi (a)"
-            />
-          </div>
-          <div class="form-group">
-            <input
-              type="number"
-              class="form-control"
-              name="b"
-              id="b"
-              placeholder="sisi (b)"
             />
           </div>
           <div class="form-group">
@@ -126,20 +115,19 @@
   <!-- End Contact Section -->
 </main>
 <script type="text/javascript">
-  var alas = document.getElementById('alas')
-  var tinggi = document.getElementById('tinggi')
+  var d1 = document.getElementById('d1')
+  var d2 = document.getElementById('d2')
   var luas = document.getElementById('luas')
   function hitung1() {
-    luas.textContent = 1/2 * Number(alas.value) * Number(tinggi.value)
+      luas.textContent = 1/2 * (Number(d1.value * d2.value))
   }
 </script>
 <script type="text/javascript">
   var a = document.getElementById('a')
-  var b = document.getElementById('b')
   var c = document.getElementById('c')
-  keliling = document.getElementById('keliling')
+  var keliling = document.getElementById('keliling')
   function hitung2() {
-    keliling.textContent = Number(a.value) + Number(b.value) + Number(c.value)
+      keliling.textContent = 2 * (Number(a.value) + Number(c.value))
   }
 </script>
 @endsection

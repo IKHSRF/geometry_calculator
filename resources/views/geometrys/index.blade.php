@@ -48,11 +48,21 @@
         <div class="row justify-content-center">
           <div class="col-xl-7 col-lg-9 text-center">
             <h1>Kalkulator Geometri</h1>
-            <h2>Menghitung luas dan keliling bangun ruang & datar</h2>
+            <h2>Menghitung Luas Dan Keliling Bangun Ruang & Bangun Datar</h2>
           </div>
         </div>
-        
         <!-- data bangun ruang-->
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="row justify-content-center">
+          <div class="col-xl-7 col-lg-9 text-center">
+            <h1>Bangun Ruang</h1>
+          </div>
+        </div>
         <div class="row icon-boxes">
           <div
             class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0"
@@ -161,7 +171,15 @@
           </div>
         </div>
 
-
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="row justify-content-center">
+          <div class="col-xl-7 col-lg-9 text-center">
+            <h1>Bangun Datar</h1>
+          </div>
+        </div>
          <!-- data bangun datar-->
          <div class="row icon-boxes">
           <div
@@ -172,7 +190,8 @@
               <div class="icon"><i class="ri-stack-line"></i></div>
               <h4 class="title"><a href="/geometri/persegi">Persegi</a></h4>
               <p class="description">
-               Menghitung luas dan keliling persegi
+                <i>luas (L) = sisi (s) x sisi (s)</i><br />
+                <i>keliling (k) = sisi (s) x sisi (s) x sisi (s) x sisi (s)</i>
               </p>
             </div>
           </div>
@@ -185,7 +204,8 @@
               <div class="icon"><i class="ri-palette-line"></i></div>
               <h4 class="title"><a href="/geometri/persegipanjang">Persegi panjang</a></h4>
               <p class="description">
-                Menghitung luas dan keliling persegi panjang
+                <i>luas = panjang (p) x lebar (l)</i><br />
+                <i>keliling (k) = 2 x (panjang + lebar)</i>
               </p>
             </div>
           </div>
@@ -198,7 +218,8 @@
               <div class="icon"><i class="ri-command-line"></i></div>
               <h4 class="title"><a href="/geometri/segitiga">segitiga</a></h4>
               <p class="description">
-                Mehitung luas dan keliling segitiga
+                <i>luas (L) = &#189; x (alas x tinggi)</i></br>
+                <i>keliling (k) = sisi a + sisi b + sisi c</i>
               </p>
             </div>
           </div>
@@ -211,7 +232,8 @@
               <div class="icon"><i class="ri-fingerprint-line"></i></div>
               <h4 class="title"><a href="/geometri/jajargenjang">Jajar Genjang</a></h4>
               <p class="description">
-                Menghitung luas dan keliling jajar genjang
+                <i>luas (L) = alas (a) x tinggi (t)</i><br>
+                <i>keliling (k) = 2 x (sisi alas + sisi miring)</i>
               </p>
             </div>
           </div>
@@ -226,7 +248,8 @@
               <div class="icon"><i class="ri-stack-line"></i></div>
               <h4 class="title"><a href="/geometri/belahketupat">Belah Ketupat</a></h4>
               <p class="description">
-               Menghitung luas dan keliling belah ketupat
+              <i>luas (L) = &#189; x diagonal (d1) x diagonal (d2)</i><br>
+            <i>keliling (k) = 4 x sisi</i>
               </p>
             </div>
           </div>
@@ -239,7 +262,8 @@
               <div class="icon"><i class="ri-palette-line"></i></div>
               <h4 class="title"><a href="/geometri/layanglayang">Layang</a></h4>
               <p class="description">
-                Menghitung luas dan keliling layang-layang
+                <i>luas (L) = &#189; x diagonal (d1) x diagonal (d2)</i><br>
+                <i>keliling (k) = 2 x (a + c)</i>
               </p>
             </div>
           </div>
@@ -252,7 +276,8 @@
               <div class="icon"><i class="ri-command-line"></i></div>
               <h4 class="title"><a href="/geometri/trapesium">Trepesium</a></h4>
               <p class="description">
-                Mehitung luas dan keliling trapesium
+                <i>luas (L) = &#189; x (a + b) x t</i><br>
+                <i>keliling (K) = AB + BC + CD + DA</i>
               </p>
             </div>
           </div>
@@ -265,7 +290,8 @@
               <div class="icon"><i class="ri-fingerprint-line"></i></div>
               <h4 class="title"><a href="/geometri/lingkaran">Lingkaran</a></h4>
               <p class="description">
-                Menghitung luas dan keliling lingkarang
+                <i>luas (L) = π x r<sup>2</sup></i><br>
+                <i>keliling (K) = π x 2 x r</i>
               </p>
             </div>
           </div>

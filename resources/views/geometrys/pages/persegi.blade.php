@@ -45,7 +45,7 @@
             <div class="col-lg-8 mt-5 mt-lg-0">
               <div class="form-group">
                 <input
-                  type="text"
+                  type="number"
                   class="form-control"
                   name="Sisi"
                   id="s"
@@ -61,7 +61,7 @@
                 <div class="col-lg-4">
                   <div class="info">
                     <div class="email">
-                      <i class="icofont-envelope"></i>
+                      <i class="icofont-calculator-alt-2"></i>
                       <h4>Keliling</h4>
                       <p id="keliling"></p>
                     </div>
@@ -71,7 +71,7 @@
                 <div class="col-lg-4">
                   <div class="info">
                     <div class="email">
-                      <i class="icofont-envelope"></i>
+                      <i class="icofont-calculator-alt-2"></i>
                       <h4>Luas</h4>
                       <p id="luas"></p>
                     </div>
