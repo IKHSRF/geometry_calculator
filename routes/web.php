@@ -36,6 +36,15 @@ Route::group(['prefix' => 'geometri'], function() {
     Route::get('/belahketupat', function() {
         return view('geometrys.pages.belahketupat');
     });
+    Route::get('/layanglayang', function() {
+        return view('geometrys.pages.layang');
+    });
+    Route::get('/trapesium', function() {
+        return view('geometrys.pages.trapesium');
+    });
+    Route::get('/lingkaran', function() {
+        return view('geometrys.pages.lingkaran');
+    });
     Route::get('/kubus', function() {
         return view('geometrys.pages.kubus');
     });

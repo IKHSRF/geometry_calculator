@@ -8,10 +8,9 @@
     <a href="/geometri" class="btn btn-primary mb-3" align="center">Kembali</a>
     <div class="row justify-content-center">
       <div class="col-xl-7 col-lg-9 text-center">
-        <h1>Segitiga</h1>
+        <h1>Trapesium</h1>
         <h2>
-          Segitiga adalah bangun datar yang terdiri dari 3 sisi garis lurus
-          dengan 3 titik sudut yang berjumlah 180º.
+          Trapesium adalah bangun datar dua dimensi yang tersusun oleh 4 buah sisi yaitu 2 buah sisi sejajar yang tidak sama panjang dan 2 buah sisi lainnya.
         </h2>
       </div>
     </div>
@@ -25,38 +24,46 @@
       <div class="section-title">
         <div class="row">
           <div class="col-sm">
-            <strong>Rumus:</strong></br>
-            <i>luas (L) = &#189; x (alas x tinggi)</i></br>
-            <i>keliling (k) = sisi a + sisi b + sisi c</i>
+            <strong>Rumus:</strong><br>
+            <i>luas (L) = &#189; x (a + b) x t</i><br>
+            <i>keliling (K) = AB + BC + CD + DA</i>
           </div>
           <div class="col-sm">
             <strong>Keterangan: </strong><br />
             <i>
-              a = alas <br>
-              t = tinggi, tinggi segitiga membentuk sudut 90° terhadap alasnya.<br>
-              b, c = adalah sisi lain segitiga
-          </i>
+              t = tinggi trapesium <br>
+              a, b = adalah sisi yang sejajar, sisi a merupakan panjang AB dan sisi b merupakan panjang DC
+            </i>
           </div>
         </div>
       </div>
       <div class="row mt-5 d-flex justify-content-center">
         <div class="col-lg-8 mt-5 mt-lg-0">
-          <strong>Luas Segitiga </strong><br /><br>
+          <strong>Luas Trapesium</strong><br /><br>
           <div class="form-group">
             <input
               type="number"
               class="form-control"
-              name="alas"
-              id="alas"
-              placeholder="Alas"
+              name="a"
+              id="a"
+              placeholder="Sisi sejajar (a)"
             />
           </div>
           <div class="form-group">
             <input
               type="number"
               class="form-control"
-              name="tinggi"
-              id="tinggi"
+              name="b"
+              id="b"
+              placeholder="Sisi sejajar (b)"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="number"
+              class="form-control"
+              name="t"
+              id="t"
               placeholder="Tinggi"
             />
           </div>
@@ -78,32 +85,41 @@
     </div>
     <div class="row mt-5 d-flex justify-content-center">
         <div class="col-lg-8 mt-5 mt-lg-0">
-          <strong>Keliling Segitiga </strong><br /><br>
+          <strong>Keliling Trapesium </strong><br /><br>
           <div class="form-group">
             <input
               type="number"
               class="form-control"
-              name="a"
-              id="a"
-              placeholder="sisi (a)"
+              name="ab"
+              id="ab"
+              placeholder="sisi (AB)"
             />
           </div>
           <div class="form-group">
             <input
               type="number"
               class="form-control"
-              name="b"
-              id="b"
-              placeholder="sisi (b)"
+              name="bc"
+              id="bc"
+              placeholder="sisi (BC)"
             />
           </div>
           <div class="form-group">
             <input
               type="number"
               class="form-control"
-              name="c"
-              id="c"
-              placeholder="sisi (c)"
+              name="cd"
+              id="cd"
+              placeholder="sisi (CD)"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="number"
+              class="form-control"
+              name="da"
+              id="da"
+              placeholder="sisi (CA)"
             />
           </div>
           <div class="text-center">
@@ -126,20 +142,23 @@
   <!-- End Contact Section -->
 </main>
 <script type="text/javascript">
-  var alas = document.getElementById('alas')
-  var tinggi = document.getElementById('tinggi')
+  var a = document.getElementById('a')
+  var b = document.getElementById('b')
+  var t = document.getElementById('t')
   var luas = document.getElementById('luas')
+  
   function hitung1() {
-    luas.textContent = 1/2 * Number(alas.value) * Number(tinggi.value)
+      luas.textContent = 1/2 * (Number(a.value) + Number(b.value)) * t.value
   }
 </script>
 <script type="text/javascript">
-  var a = document.getElementById('a')
-  var b = document.getElementById('b')
-  var c = document.getElementById('c')
-  keliling = document.getElementById('keliling')
+  var ab = document.getElementById('ab')
+  var bc = document.getElementById('bc')
+  var cd = document.getElementById('cd')
+  var da = document.getElementById('da')
+  var keliling = document.getElementById('keliling')
   function hitung2() {
-    keliling.textContent = Number(a.value) + Number(b.value) + Number(c.value)
+      keliling.textContent = Number(ab.value) + Number(bc.value) + Number(cd.value) + Number(da.value)
   }
 </script>
 @endsection
