@@ -8,9 +8,9 @@
     <a href="/geometri" class="btn btn-primary mb-3" align="center">Kembali</a>
     <div class="row justify-content-center">
       <div class="col-xl-7 col-lg-9 text-center">
-        <h1>Lingkaran</h1>
+        <h1>Bola</h1>
         <h2>
-          Lingkaran adalah bangun datar dua dimensi dibentuk oleh himpunan semua titik yang mempunyai jarak sama dari suatu titik tetap.
+          Bola adalah bangun ruang dengan bentuk bulat sempurna yang tersusun oleh tidak terhingga lingkaran yang mempunyai jari-jari dan pusat lingkaran yang sama.
         </h2>
       </div>
     </div>
@@ -25,39 +25,28 @@
         <div class="row">
           <div class="col-sm">
             <strong>Rumus:</strong><br>
-            <i>luas (L) = π x r<sup>2</sup></i><br>
-            <i>keliling (K) = π x 2 x r</i>
+            <i>luas (L) = 4 × π × r²</i><br>
+            <i>volume (K) =  4/3 × π × r³</i>
           </div>
           <div class="col-sm">
             <strong>Keterangan: </strong><br />
             <i>
-              P = titik pusat <br>
-              r = jari-jari <br>
-              d = diameter <br>
-              π = konstanta pi (3.14) <br>
+              r = jari - jari <br>
+              π = phi (22/7) 
             </i>
           </div>
         </div>
       </div>
       <div class="row mt-5 d-flex justify-content-center">
         <div class="col-lg-8 mt-5 mt-lg-0">
-          <strong>Luas & Keliling Lingkaran</strong><br /><br>
+          <strong>Volume & Luas Bola</strong><br /><br>
           <div class="form-group">
             <input
               type="number"
               class="form-control"
               name="r"
               id="r"
-              placeholder="Jari Jari"
-            />
-          </div>
-          <div class="form-group">
-            <input
-              type="number"
-              class="form-control"
-              name="d"
-              id="d"
-              placeholder="Diameter"
+              placeholder="Jari - Jari"
             />
           </div>
           <div class="text-center">
@@ -77,7 +66,7 @@
               <div class="info">
                 <div class="email">
                   <i class="icofont-calculator-alt-2"></i>
-                  <h4>Keliling</h4>
+                  <h4>Volume</h4>
                   <p id="keliling"></p>
                 </div>
               </div>
@@ -89,17 +78,14 @@
   <!-- End Contact Section -->
 </main>
 <script type="text/javascript">
-  var pi7 = 22/7
-  // var pi = 3.14
-  var jarijari = document.getElementById('r')
-  var diameter = document.getElementById('d')
+  var jari = document.getElementById('r')
+  var phi = 22/7
+
   var luas = document.getElementById('luas')
   var keliling = document.getElementById('keliling')
   function hitung() {
-      diameter.value = jarijari.value * 2
-      luas.textContent = pi7 * Number(jarijari.value * jarijari.value)
-      // luas.value = pi * Number(jarijari.value * jarijari.value)
-      keliling.textContent = pi7 * 2 * Number(jarijari.value) 
+      luas.textContent = 4 * phi * (Number(jari.value) * Number(jari.value))
+      keliling.textContent = 4 / 3 * phi * (Number(jari.value) * Number(jari.value) * Number(jari.value))
   }
 </script>
 @endsection

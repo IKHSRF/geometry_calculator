@@ -51,7 +51,25 @@ Route::group(['prefix' => 'geometri'], function() {
     Route::get('/balok', function() {
         return view('geometrys.pages.balok');
     });
-    Route::get('/prisma', function() {
-        return view('geometrys.pages.prisma');
+    Route::get('/bola', function() {
+        return view('geometrys.pages.bola');
+    });
+    Route::get('/kerucut', function() {
+        return view('geometrys.pages.kerucut');
+    });
+    Route::get('/limasbalok', function() {
+        return view('geometrys.pages.limasbalok');
+    });
+    Route::get('/limaskubus', function() {
+        return view('geometrys.pages.limaskubus');
+    });
+    Route::get('/prismaempat', function() {
+        return view('geometrys.pages.prismaempat');
+    });
+    Route::get('/prismatiga', function() {
+        return view('geometrys.pages.prismatiga');
+    });
+    Route::get('/tabung', function() {
+        return view('geometrys.pages.tabung');
     });
 });
