@@ -41,7 +41,7 @@
       </div>
       <div class="row mt-5 d-flex justify-content-center">
         <div class="col-lg-8 mt-5 mt-lg-0">
-          <strong>Luas Lingkaran</strong><br /><br>
+          <strong>Luas & Keliling Lingkaran</strong><br /><br>
           <div class="form-group">
             <input
               type="number"

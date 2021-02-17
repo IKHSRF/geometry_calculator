@@ -8,10 +8,7 @@
     <a href="/geometri" class="btn btn-primary mb-3" align="center">Kembali</a>
     <div class="row justify-content-center">
       <div class="col-xl-7 col-lg-9 text-center">
-        <h1>Balok</h1>
-        <h2>
-        Balok adalah bangun ruang tiga dimensi yang tersusun oleh 3 pasang segi empat (persegi atau persegi panjang) dan paling sedikit mempunyai 1 pasangan sisi segi empat yang mempunyai bentuk yang berbeda.
-        </h2>
+        <h1>Prisma Segitiga</h1>
       </div>
     </div>
   </div>
@@ -23,49 +20,36 @@
     <div class="container" data-aos="fade-up">
       <div class="section-title">
         <div class="row">
-          <div class="col-sm">
-            <strong>Rumus:</strong><br>
-            <i>luas = 2 x ( p x l + p x t + l x t)</i><br>
-            <i>volume = p x l x t</i>
-          </div>
-          <div class="col-sm">
-            <strong>Keterangan: </strong><br />
-            <i>
-              p = Panjang <br>
-              l = Lebar <br>
-              t = tinggi
-            </i>
-          </div>
         </div>
       </div>
       <div class="row mt-5 d-flex justify-content-center">
         <div class="col-lg-8 mt-5 mt-lg-0">
-          <strong>Volume & Luas Balok</strong><br /><br>
+          <strong>Volume & Luas Prisma Segitiga</strong><br /><br>
           <div class="form-group">
             <input
               type="number"
               class="form-control"
-              name="l"
-              id="l"
-              placeholder="Lebar"
+              name="as"
+              id="as"
+              placeholder="Alas Segitiga"
             />
           </div>
           <div class="form-group">
             <input
               type="number"
               class="form-control"
-              name="p"
-              id="p"
-              placeholder="Panjang"
+              name="ts"
+              id="ts"
+              placeholder="Tinggi Segitiga"
             />
           </div>
           <div class="form-group">
             <input
               type="number"
               class="form-control"
-              name="t"
-              id="t"
-              placeholder="Tinggi"
+              name="tp"
+              id="tp"
+              placeholder="Tinggi Prisma"
             />
           </div>
           <div class="text-center">
@@ -97,15 +81,26 @@
   <!-- End Contact Section -->
 </main>
 <script type="text/javascript">
-  var panjang = document.getElementById('p')
-  var lebar = document.getElementById('l')
-  var tinggi = document.getElementById('t')
+  var alas_segitiga = document.getElementById('as')
+  var tinggi_segitiga = document.getElementById('ts')
+  var tinggi_prisma = document.getElementById('tp')
+  var la
+  var lprismatiga
+  var als
+  var ast
+  var vprismatiga
 
   var luas = document.getElementById('luas')
   var keliling = document.getElementById('keliling')
   function hitung() {
-      luas.textContent = 2 * (Number(panjang.value) * Number(lebar.value) + Number(panjang.value) * Number(tinggi.value) + Number(lebar.value) * Number(tinggi.value))
-      keliling.textContent = Number(panjang.value) * Number(lebar.value) * Number(tinggi.value)
+      la = 1/2 * Number(alas_segitiga.value) * Number(tinggi_segitiga.value)
+      lprismatiga = (2 * la) + (3 * (Number(alas_segitiga.value) * Number(tinggi_prisma.value))) 
+      als = (2 * la)
+      ast = (3 * (Number(alas_segitiga.value) * Number(tinggi_prisma.value)))
+      vprismatiga = (1/2 * Number(alas_segitiga.value) * Number(tinggi_segitiga.value)) * Number(tinggi_prisma.value)
+
+      luas.textContent = lprismatiga
+      keliling.textContent = vprismatiga
   }
 </script>
 @endsection

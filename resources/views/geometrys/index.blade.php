@@ -124,7 +124,7 @@
             data-aos-delay="200">
             <div class="icon-box">
               <div class="icon"><i class="ri-stack-line"></i></div>
-              <h4 class="title"><a href="/geometri/limassegitiga">Limas Segitiga</a></h4>
+              <h4 class="title"><a href="/geometri/limasbalok">Limas Balok</a></h4>
               <p class="description">
                Menghitung luas dan keliling limas segitga
               </p>
@@ -137,7 +137,7 @@
             data-aos-delay="300">
             <div class="icon-box">
               <div class="icon"><i class="ri-palette-line"></i></div>
-              <h4 class="title"><a href="/geometri/prisma">Prisma</a></h4>
+              <h4 class="title"><a href="/geometri/prismasegitiga">Prisma Segitiga</a></h4>
               <p class="description">
                 Menghitung luas dan keliling prisma
               </p>
@@ -163,9 +163,21 @@
             data-aos-delay="500">
             <div class="icon-box">
               <div class="icon"><i class="ri-fingerprint-line"></i></div>
-              <h4 class="title"><a href="/geometri/limassegiempat">Limas Segiempat</a></h4>
+              <h4 class="title"><a href="/geometri/limaskubus">Limas Kubus</a></h4>
               <p class="description">
                 Menghitung luas dan keliling limas segiempat
+              </p>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-3 d-flex align-items-stretch mt-5 mb-lg-0"
+            data-aos="zoom-in"
+            data-aos-delay="300">
+            <div class="icon-box">
+              <div class="icon"><i class="ri-palette-line"></i></div>
+              <h4 class="title"><a href="/geometri/prismasegiempat">Prisma Segiempat</a></h4>
+              <p class="description">
+                Menghitung luas dan keliling prisma
               </p>
             </div>
           </div>

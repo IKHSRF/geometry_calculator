@@ -8,10 +8,7 @@
     <a href="/geometri" class="btn btn-primary mb-3" align="center">Kembali</a>
     <div class="row justify-content-center">
       <div class="col-xl-7 col-lg-9 text-center">
-        <h1>Balok</h1>
-        <h2>
-        Balok adalah bangun ruang tiga dimensi yang tersusun oleh 3 pasang segi empat (persegi atau persegi panjang) dan paling sedikit mempunyai 1 pasangan sisi segi empat yang mempunyai bentuk yang berbeda.
-        </h2>
+        <h1>Limas Kubus</h1>
       </div>
     </div>
   </div>
@@ -23,49 +20,27 @@
     <div class="container" data-aos="fade-up">
       <div class="section-title">
         <div class="row">
-          <div class="col-sm">
-            <strong>Rumus:</strong><br>
-            <i>luas = 2 x ( p x l + p x t + l x t)</i><br>
-            <i>volume = p x l x t</i>
-          </div>
-          <div class="col-sm">
-            <strong>Keterangan: </strong><br />
-            <i>
-              p = Panjang <br>
-              l = Lebar <br>
-              t = tinggi
-            </i>
-          </div>
         </div>
       </div>
       <div class="row mt-5 d-flex justify-content-center">
         <div class="col-lg-8 mt-5 mt-lg-0">
-          <strong>Volume & Luas Balok</strong><br /><br>
+          <strong>Volume & Luas Limas Kubus</strong><br /><br>
           <div class="form-group">
             <input
               type="number"
               class="form-control"
-              name="l"
-              id="l"
-              placeholder="Lebar"
+              name="s"
+              id="s"
+              placeholder="Sisi"
             />
           </div>
           <div class="form-group">
             <input
               type="number"
               class="form-control"
-              name="p"
-              id="p"
-              placeholder="Panjang"
-            />
-          </div>
-          <div class="form-group">
-            <input
-              type="number"
-              class="form-control"
-              name="t"
-              id="t"
-              placeholder="Tinggi"
+              name="tl"
+              id="tl"
+              placeholder="Tinggi Limas"
             />
           </div>
           <div class="text-center">
@@ -97,15 +72,33 @@
   <!-- End Contact Section -->
 </main>
 <script type="text/javascript">
-  var panjang = document.getElementById('p')
-  var lebar = document.getElementById('l')
-  var tinggi = document.getElementById('t')
+  var sisi = document.getElementById('s')
+  var tinggi = document.getElementById('tl')
+  var luas_alas_persegi
+  var vlimas
+  var tinggi_limas
+  var luas_segitiga
+  var lsegitiga
+  var h
+  var llimastiga
+  var ts
+  var ll
 
   var luas = document.getElementById('luas')
   var keliling = document.getElementById('keliling')
   function hitung() {
-      luas.textContent = 2 * (Number(panjang.value) * Number(lebar.value) + Number(panjang.value) * Number(tinggi.value) + Number(lebar.value) * Number(tinggi.value))
-      keliling.textContent = Number(panjang.value) * Number(lebar.value) * Number(tinggi.value)
+      luas_alas_persegi = Number(sisi.value) * Number(sisi.value)
+      vlimas = 1 / 3 * luas_alas_persegi * Number(tinggi.value)
+      tinggi_limas = Number(tinggi.value) * Number(tinggi.value)
+      luas_segitiga = (1/2 * Number(sisi.value)) * (1/2 * Number(sisi.value))
+      lsegitiga = luas_segitiga + tinggi_limas
+      h = Math.sqrt(lsegitiga)
+      llimastiga = luas_alas_persegi + 4 * lsegitiga
+      ts = 4 * (1/2 * Number(sisi.value) * h)
+      ll = luas_alas_persegi + ts
+
+      luas.textContent = ll
+      keliling.textContent = vlimas
   }
 </script>
 @endsection

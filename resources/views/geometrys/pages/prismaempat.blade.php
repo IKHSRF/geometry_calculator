@@ -8,10 +8,7 @@
     <a href="/geometri" class="btn btn-primary mb-3" align="center">Kembali</a>
     <div class="row justify-content-center">
       <div class="col-xl-7 col-lg-9 text-center">
-        <h1>Balok</h1>
-        <h2>
-        Balok adalah bangun ruang tiga dimensi yang tersusun oleh 3 pasang segi empat (persegi atau persegi panjang) dan paling sedikit mempunyai 1 pasangan sisi segi empat yang mempunyai bentuk yang berbeda.
-        </h2>
+        <h1>Prisma Segiempat</h1>
       </div>
     </div>
   </div>
@@ -23,33 +20,11 @@
     <div class="container" data-aos="fade-up">
       <div class="section-title">
         <div class="row">
-          <div class="col-sm">
-            <strong>Rumus:</strong><br>
-            <i>luas = 2 x ( p x l + p x t + l x t)</i><br>
-            <i>volume = p x l x t</i>
-          </div>
-          <div class="col-sm">
-            <strong>Keterangan: </strong><br />
-            <i>
-              p = Panjang <br>
-              l = Lebar <br>
-              t = tinggi
-            </i>
-          </div>
         </div>
       </div>
       <div class="row mt-5 d-flex justify-content-center">
         <div class="col-lg-8 mt-5 mt-lg-0">
-          <strong>Volume & Luas Balok</strong><br /><br>
-          <div class="form-group">
-            <input
-              type="number"
-              class="form-control"
-              name="l"
-              id="l"
-              placeholder="Lebar"
-            />
-          </div>
+          <strong>Volume & Luas Limas Kubus</strong><br /><br>
           <div class="form-group">
             <input
               type="number"
@@ -57,6 +32,15 @@
               name="p"
               id="p"
               placeholder="Panjang"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="number"
+              class="form-control"
+              name="l"
+              id="l"
+              placeholder="Lebar"
             />
           </div>
           <div class="form-group">
@@ -100,12 +84,23 @@
   var panjang = document.getElementById('p')
   var lebar = document.getElementById('l')
   var tinggi = document.getElementById('t')
+  var pl
+  var pt
+  var lt
+  var lbalok
+  var vprismaempat
 
   var luas = document.getElementById('luas')
   var keliling = document.getElementById('keliling')
-  function hitung() {
-      luas.textContent = 2 * (Number(panjang.value) * Number(lebar.value) + Number(panjang.value) * Number(tinggi.value) + Number(lebar.value) * Number(tinggi.value))
-      keliling.textContent = Number(panjang.value) * Number(lebar.value) * Number(tinggi.value)
+  function hitung() {   
+      pl = Number(panjang.value) * Number(lebar.value)
+      pt = Number(panjang.value) * Number(tinggi.value)
+      lt = Number(lebar.value) * Number(tinggi.value)
+      lbalok = 2 * (pl+pt+lt)
+      vprismaempat = Number(panjang.value) * Number(lebar.value) * Number(tinggi.value)
+
+      luas.textContent = lbalok
+      keliling.textContent = vprismaempat
   }
 </script>
 @endsection

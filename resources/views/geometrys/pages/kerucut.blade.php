@@ -8,9 +8,9 @@
     <a href="/geometri" class="btn btn-primary mb-3" align="center">Kembali</a>
     <div class="row justify-content-center">
       <div class="col-xl-7 col-lg-9 text-center">
-        <h1>Balok</h1>
+        <h1>Kerucut</h1>
         <h2>
-        Balok adalah bangun ruang tiga dimensi yang tersusun oleh 3 pasang segi empat (persegi atau persegi panjang) dan paling sedikit mempunyai 1 pasangan sisi segi empat yang mempunyai bentuk yang berbeda.
+          Kerucut adalah bangun ruang yang memiliki 2 sisi yaitu sebuah lingkaran dan sebuah bidang lengkung.
         </h2>
       </div>
     </div>
@@ -25,38 +25,30 @@
         <div class="row">
           <div class="col-sm">
             <strong>Rumus:</strong><br>
-            <i>luas = 2 x ( p x l + p x t + l x t)</i><br>
-            <i>volume = p x l x t</i>
+            <i>luas (L) = π × r x (r + s)</i><br>
+            <i>volume (V) = 1 / 3 x π × r x r x t</i>
           </div>
           <div class="col-sm">
             <strong>Keterangan: </strong><br />
             <i>
-              p = Panjang <br>
-              l = Lebar <br>
-              t = tinggi
+              r = jari - jari <br>
+              t = tinggi <br>
+              s = sisi <br>
+              π = phi (22/7)
             </i>
           </div>
         </div>
       </div>
       <div class="row mt-5 d-flex justify-content-center">
         <div class="col-lg-8 mt-5 mt-lg-0">
-          <strong>Volume & Luas Balok</strong><br /><br>
+          <strong>Volume & Luas Kerucut</strong><br /><br>
           <div class="form-group">
             <input
               type="number"
               class="form-control"
-              name="l"
-              id="l"
-              placeholder="Lebar"
-            />
-          </div>
-          <div class="form-group">
-            <input
-              type="number"
-              class="form-control"
-              name="p"
-              id="p"
-              placeholder="Panjang"
+              name="r"
+              id="r"
+              placeholder="Jari - Jari"
             />
           </div>
           <div class="form-group">
@@ -97,15 +89,16 @@
   <!-- End Contact Section -->
 </main>
 <script type="text/javascript">
-  var panjang = document.getElementById('p')
-  var lebar = document.getElementById('l')
+  var jari = document.getElementById('r')
   var tinggi = document.getElementById('t')
+  var phi = 22/7
+
 
   var luas = document.getElementById('luas')
   var keliling = document.getElementById('keliling')
   function hitung() {
-      luas.textContent = 2 * (Number(panjang.value) * Number(lebar.value) + Number(panjang.value) * Number(tinggi.value) + Number(lebar.value) * Number(tinggi.value))
-      keliling.textContent = Number(panjang.value) * Number(lebar.value) * Number(tinggi.value)
+      luas.textContent = phi * Number(jari.value) * (Number(jari.value) +  Math.sqrt(Number(jari.value) * Number(jari.value) + Number(tinggi.value) * Number(tinggi.value)))
+      keliling.textContent = 1 / 3 * phi * Number(jari.value) * Number(jari.value) * Number(tinggi.value)
   }
 </script>
 @endsection
