@@ -1,6 +1,16 @@
 <html>
 <head>
     <title></title>
+    <style type="text/css">
+    .link-button{
+        text-decoration: none;
+        background-color: #eeeeee;
+        color: black;
+        padding: 2px 6px 2px 6px;
+        border: 1px solid #c2c2c2;
+        border-radius:2px;
+    }
+    </style>
 </head>
 <body>
     <h2>Mencari Luas dan Volume Tabung</h2>
@@ -9,15 +19,20 @@
 		<tr>
 	        <td>jari-jari</td>
 	        <td>=</td>
-	        <td><input type="text" name="jari2" /><br/></td>
+	        <td><input type="text" name="jari2" min="1" required /><br/></td>
 	    </tr>
 	    <tr>
 	        <td>tinggi</td>
 	        <td>=</td>
-	        <td><input type="text" name="tinggi"/><br/></td>
+	        <td><input type="text" name="tinggi" min="1" required/><br/></td>
 	    </tr>
+	    <tr>
+            <td></td>
+            <td></td> 
+            <td><input type="submit" name="submit" value="Hitung"></td>
+            <td><a href="tabung.php" class="link-button">Reset</a></td>
+        </tr>
     </table>
-	<input type="submit" name="submit" value="Hitung">
 </form>
  
 <?php

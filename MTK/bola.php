@@ -1,12 +1,33 @@
 <html>
 <head>
     <title></title>
+    <style type="text/css">
+    .link-button{
+        text-decoration: none;
+        background-color: #eeeeee;
+        color: black;
+        padding: 2px 6px 2px 6px;
+        border: 1px solid #c2c2c2;
+        border-radius:2px;
+    }
+    </style>
 </head>
 <body>
     <h2>Mencari Luas dan Volume Bola</h2>
 	<form action="" method="post">
-		Jari-jari :<input type="text" name="jari2"><br>
-		<input type="submit" name="submit" value="Hitung">
+		<table>
+			<tr>
+                <td>Jari Jari</td>
+                <td>:</td>
+                <td><input type="number" name="jari2" required min="1"></td>
+            </tr>
+            <tr>
+            	<td></td>
+                <td></td>
+            	<td><input type="submit" name="submit" value="Hitung"></td>
+            	<td><a href="bola.php" class="link-button">Reset</a></td>
+            </tr>
+		</table>
 	</form>
 	 
 	<?php

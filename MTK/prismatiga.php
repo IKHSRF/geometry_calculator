@@ -1,6 +1,16 @@
 <html>
 <head>
     <title></title>
+    <style type="text/css">
+    .link-button{
+        text-decoration: none;
+        background-color: #eeeeee;
+        color: black;
+        padding: 2px 6px 2px 6px;
+        border: 1px solid #c2c2c2;
+        border-radius:2px;
+    }
+    </style>
 </head>
 <body>
     <h2>Mencari Luas dan Volume Prisma Segi Tiga</h2>
@@ -9,22 +19,23 @@
             <tr>
                 <td>Alas Segitiga</td>
                 <td>:</td>
-                <td><input type="text" name="as" required ></td>
+                <td><input type="text" name="as" min="1" required ></td>
             </tr>
             <tr>
                 <td>Tinggi Segitiga</td>
                 <td>:</td>
-                <td><input type="text" name="ts" required ></td>
+                <td><input type="text" name="ts" min="1" required ></td>
             </tr>
             <tr>
                 <td>Tinggi Prisma</td>
                 <td>:</td>
-                <td><input type="text" name="tp" required ></td>
+                <td><input type="text" name="tp" min="1" required ></td>
             </tr>
             <tr>
                 <td></td>
                 <td></td>
                 <td><input type="submit" name="submit" value="Hitung"></td>
+                <td><a href="prismatiga.php" class="link-button">Reset</a></td>
             </tr>
         </table>
     </form>
