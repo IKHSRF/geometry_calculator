@@ -52,9 +52,18 @@
               placeholder="Tinggi Prisma"
             />
           </div>
-          <div class="text-center">
-            <button onclick="hitung()" class="btn btn-primary">Hitung</button>
-          </div>
+          <div class="row d-flex justify-content-center">
+                <div class="text-center mr-4">
+                  <button onclick="hitung()" class="btn btn-primary">
+                    Hitung
+                  </button>
+                </div>
+                <div class="text-center">
+                  <button onclick="hapus()" class="btn btn-danger">
+                    Hapus
+                  </button>
+                </div>
+              </div>
           <div class="form-row d-flex justify-content-center">
             <div class="col-lg-4">
               <div class="info">
@@ -74,6 +83,15 @@
                 </div>
               </div>
             </div>
+            <div class="col-lg-4">
+                  <div class="info">
+                    <div class="email">
+                      <i class="icofont-calculator-alt-2"></i>
+                      <h4>Hasil</h4>
+                      <p id="hasil"></p>
+                    </div>
+                  </div>
+                </div>
           </div>
         </div>
     </div>
@@ -92,6 +110,8 @@
 
   var luas = document.getElementById('luas')
   var keliling = document.getElementById('keliling')
+  var hasil = document.getElementById('hasil')
+
   function hitung() {
       la = 1/2 * Number(alas_segitiga.value) * Number(tinggi_segitiga.value)
       lprismatiga = (2 * la) + (3 * (Number(alas_segitiga.value) * Number(tinggi_prisma.value))) 
@@ -101,6 +121,35 @@
 
       luas.textContent = lprismatiga
       keliling.textContent = vprismatiga
+      hasil.innerHTML=
+        "<strong>Penyelesaian:</strong>" +
+        "<br>L = (2 x Alas Segitiga)+(3 * (Alas segitiga x Tinggi Prisma))" +
+        "<br>L = " + als + ' + ' + ast + 
+        "<br>L = " + luas.textContent + 
+        "<br>V = (1/2 x Alas x Tinggi Segitiga) x Tinggi Prisma" + 
+        "<br>V = (1/2 x " + Number(alas_segitiga.value) + ' x ' +  Number(tinggi_segitiga.value) + ')' + ' x '  + Number(tinggi_prisma.value) +
+        "<br>V = " + keliling.textContent 
+
+        
+        if (alas_segitiga.value != "" && alas_segitiga.value > 0 && luas_segitiga.value != "" && luas_segitiga.value > 0 && tinggi_prisma.value != "" && tinggi_prisma.value > 0) {
+          return true
+        } else {
+          alert("Masukkan nilai yang lebih besar dari 0")
+          alas_segitiga.value = ""
+          tinggi_segitiga.value = ""
+          tinggi_prisma.value = ""
+          luas.textContent = ""
+          keliling.textContent = ""
+          hasil.textContent = ""
+        }
   }
+  function hapus() {
+			alas_segitiga.value = ""
+      tinggi_segitiga.value = ""
+      tinggi_prisma.value = ""
+			luas.textContent = ""
+			keliling.textContent = ""
+			hasil.textContent = ""
+		}
 </script>
 @endsection

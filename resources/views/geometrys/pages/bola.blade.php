@@ -71,11 +71,19 @@
                 </div>
               </div>
             </div>
+            <div class="col-lg-4">
+              <div class="info">
+                <div class="email">
+                  <i class="icofont-calculator-alt-2"></i>
+                  <h4>Hasil</h4>
+                  <p id="hasil"></p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
     </div>
   </section>
-  <label id="hasil"></label>
   <!-- End Contact Section -->
 </main>
 <script type="text/javascript">

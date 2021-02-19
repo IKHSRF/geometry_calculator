@@ -59,9 +59,18 @@
               placeholder="Tinggi"
             />
           </div>
-          <div class="text-center">
-            <button onclick="hitung()" class="btn btn-primary">Hitung</button>
-          </div>
+          <div class="row d-flex justify-content-center">
+                <div class="text-center mr-4">
+                  <button onclick="hitung()" class="btn btn-primary">
+                    Hitung
+                  </button>
+                </div>
+                <div class="text-center">
+                  <button onclick="hapus()" class="btn btn-danger">
+                    Hapus
+                  </button>
+                </div>
+              </div>
           <div class="form-row d-flex justify-content-center">
             <div class="col-lg-4">
               <div class="info">
@@ -81,6 +90,15 @@
                 </div>
               </div>
             </div>
+            <div class="col-lg-4">
+              <div class="info">
+                <div class="email">
+                  <i class="icofont-calculator-alt-2"></i>
+                  <h4>Hasil</h4>
+                  <p id="hasil"></p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
     </div>
@@ -94,9 +112,38 @@
 
   var luas = document.getElementById('luas')
   var keliling = document.getElementById('keliling')
+  var hasil = document.getElementById('hasil')
+
   function hitung() {
       luas.textContent = 2 * phi * Number(jari.value) * (Number(jari.value) + Number(tinggi.value))
       keliling.textContent = phi * Number(jari.value) * Number(jari.value) * Number(tinggi.value)
+      hasil.innerHTML=
+        "<strong>Penyelesaian:</strong>" +
+        "<br>L = 2 x 22/7 x r x (r + t)</u>" +
+        "<br>L = 2 x " + phi + ' x ' + Number(jari.value) + ' x ' + '(' + Number(jari.value) + ' + ' + Number(tinggi.value) + ')' + 
+        "<br>L = " + luas.textContent +  
+        "<br>V = 22/7 x r x r x t" + 
+        "<br>V = " + phi + ' x ' + Number(jari.value) + ' x ' + Number(jari.value) + ' x ' + Number(tinggi.value) + 
+        "<br>V = " + keliling.textContent
+
+        if (jari.value != "" && jari.value > 0 && tinggi.value != "" && tinggi.value > 0 ) {
+          return true
+        } 
+         else {
+          alert("Masukkan nilai yang lebih besar dari 0")
+          jari.value = ""
+          tinggi.value = ""
+          luas.textContent = ""
+          keliling.textContent = ""
+          hasil.textContent = ""
+        }
   }
+function hapus() {
+  jari.value = ""
+  tinggi.value = ""
+  luas.textContent = ""
+  keliling.textContent = ""
+  hasil.textContent = ""
+}
 </script>
 @endsection
