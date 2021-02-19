@@ -94,6 +94,7 @@
         </div>
     </div>
   </section>
+  <label id="hasil"></label>
   <!-- End Contact Section -->
 </main>
 <script type="text/javascript">
@@ -103,9 +104,54 @@
 
   var luas = document.getElementById('luas')
   var keliling = document.getElementById('keliling')
+  var hasil = document.getElementById('hasil')
+
   function hitung() {
       luas.textContent = 2 * (Number(panjang.value) * Number(lebar.value) + Number(panjang.value) * Number(tinggi.value) + Number(lebar.value) * Number(tinggi.value))
       keliling.textContent = Number(panjang.value) * Number(lebar.value) * Number(tinggi.value)
+
+      hasil.innerHTML =
+      "<strong>Penyelesaian:</strong>" +
+      "<br><u>diketahui:</u>" +
+	    "<br>panjang (p): " + panjang.value +
+	    "<br>lebar (l): " + lebar.value +
+	    "<br>tinggi (t): " + tinggi.value +
+
+			"<br><u>luas (L):</u>" +
+			"<br>L = 2 x (p x l + p x t + l x t)" +
+			"<br>L = 2 x (" + panjang.value + " x " + lebar.value + " + " + panjang.value + " x " + tinggi.value + " + " + lebar.value + " x " + tinggi.value + ")" +
+			"<br>L = 2 x (" + (Number(panjang.value) * Number(lebar.value)) + " + " + (Number(panjang.value) * Number(tinggi.value)) + " + " + (Number(lebar.value) * Number(tinggi.value)) + ")" +
+			"<br>L = 2 x (" + (Number(panjang.value) * Number(lebar.value) + Number(panjang.value) * Number(tinggi.value)) + " + " + (Number(lebar.value) * Number(tinggi.value)) + ")" +
+			"<br>L = 2 x (" + (Number(panjang.value) * Number(lebar.value) + Number(panjang.value) * Number(tinggi.value) + Number(lebar.value) * Number(tinggi.value)) + ")" +
+			"<br>L = " + luas.textContent +
+
+			"<br><u>volume (V)</u>" +
+			"<br>V = p x l x t" +
+			"<br>V = " + panjang.value + " x " + lebar.value + " x " + tinggi.value +
+			"<br>V = " + (Number(panjang.value) * Number(lebar.value)) + " x " + tinggi.value + 
+			"<br>V = " + keliling.textContent
+
+
+			if (panjang.value != "" && lebar.value != "" && tinggi.value != "" && panjang.value > 0 && lebar.value > 0 && tinggi.value > 0) {
+				return true
+			} else {
+				alert("Masukkan nilai yang lebih besar dari 0")
+				panjang.value = ""
+				lebar.value = ""
+				tinggi.value = ""
+				luas.textContent = ""
+				keliling.textContent = ""
+				hasil.innerHTML = ""
+			}
+			
+			function hapus() {
+				panjang.value = ""
+				lebar.value = ""
+				tinggi.value = ""
+				luas.textContent = ""
+				keliling.textContent = ""
+				hasil.innerHTML = ""
+			}
   }
 </script>
 @endsection
