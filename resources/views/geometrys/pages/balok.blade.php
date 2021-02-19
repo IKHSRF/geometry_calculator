@@ -68,9 +68,18 @@
               placeholder="Tinggi"
             />
           </div>
-          <div class="text-center">
-            <button onclick="hitung()" class="btn btn-primary">Hitung</button>
-          </div>
+          <div class="row d-flex justify-content-center">
+                <div class="text-center mr-4">
+                  <button onclick="hitung()" class="btn btn-primary">
+                    Hitung
+                  </button>
+                </div>
+                <div class="text-center">
+                  <button onclick="hapus()" class="btn btn-danger">
+                    Hapus
+                  </button>
+                </div>
+              </div>
           <div class="form-row d-flex justify-content-center">
             <div class="col-lg-4">
               <div class="info">
@@ -90,11 +99,19 @@
                 </div>
               </div>
             </div>
+            <div class="col-lg-4">
+              <div class="info">
+                <div class="email">
+                  <i class="icofont-calculator-alt-2"></i>
+                  <h4>Hasil</h4>
+                  <p id="hasil"></p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
     </div>
   </section>
-  <label id="hasil"></label>
   <!-- End Contact Section -->
 </main>
 <script type="text/javascript">
@@ -143,8 +160,8 @@
 				keliling.textContent = ""
 				hasil.innerHTML = ""
 			}
-			
-			function hapus() {
+  }
+  function hapus() {
 				panjang.value = ""
 				lebar.value = ""
 				tinggi.value = ""
@@ -152,6 +169,5 @@
 				keliling.textContent = ""
 				hasil.innerHTML = ""
 			}
-  }
 </script>
 @endsection
