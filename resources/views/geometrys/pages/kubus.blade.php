@@ -121,7 +121,7 @@
           sisi.value = ""
           luas.textContent = ""
           keliling.textContent = ""
-          hasil.InnerHTML = ""
+          hasil.textContent = ""
         }
       }
 
@@ -129,7 +129,7 @@
 			sisi.value = ""
 			luas.textContent = ""
 			keliling.textContent = ""
-			hasil.InnerHTML = ""
+			hasil.textContent = ""
 		}
 </script>
 @endsection
