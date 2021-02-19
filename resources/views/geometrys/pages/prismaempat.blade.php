@@ -52,9 +52,18 @@
               placeholder="Tinggi"
             />
           </div>
-          <div class="text-center">
-            <button onclick="hitung()" class="btn btn-primary">Hitung</button>
-          </div>
+          <div class="row d-flex justify-content-center">
+                <div class="text-center mr-4">
+                  <button onclick="hitung()" class="btn btn-primary">
+                    Hitung
+                  </button>
+                </div>
+                <div class="text-center">
+                  <button onclick="hapus()" class="btn btn-danger">
+                    Hapus
+                  </button>
+                </div>
+              </div>
           <div class="form-row d-flex justify-content-center">
             <div class="col-lg-4">
               <div class="info">
@@ -71,6 +80,15 @@
                   <i class="icofont-calculator-alt-2"></i>
                   <h4>Volume</h4>
                   <p id="keliling"></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="info">
+                <div class="email">
+                  <i class="icofont-calculator-alt-2"></i>
+                  <h4>Hasil</h4>
+                  <p id="hasil"></p>
                 </div>
               </div>
             </div>
@@ -92,6 +110,8 @@
 
   var luas = document.getElementById('luas')
   var keliling = document.getElementById('keliling')
+  var hasil = document.getElementById('hasil')
+
   function hitung() {   
       pl = Number(panjang.value) * Number(lebar.value)
       pt = Number(panjang.value) * Number(tinggi.value)
@@ -101,6 +121,34 @@
 
       luas.textContent = lbalok
       keliling.textContent = vprismaempat
+      hasil.innerHTML=
+        "<strong>Penyelesaian:</strong>" +
+        "<br>L = 2 x (p.l + p.t + l.t)" +  
+        "<br>L = 2 x (" + Number(panjang.value) + ' x ' + Number(lebar.value) + ')' + '+' + '(' + Number(panjang.value) + ' x ' + Number(tinggi.value) + ')' + '+' + '(' + Number(lebar.value) + ' + ' + Number(tinggi.value) +  ')' +
+        "<br>L = " + luas.textContent
+        "<br>V = p x l x t" + 
+        "<br>V = " + Number(panjang.value) + ' x ' + Number(lebar.value) + ' x ' + Number(tinggi.value) + 
+        "<br>V = " + keliling.textContent
+        
+        if (panjang.value != "" && panjang.value > 0 && lebar.value != "" && lebar.value > 0 && tinggi.value != "" && tinggi.value > 0) {
+          return true
+        } else {
+          alert("Masukkan nilai yang lebih besar dari 0")
+          panjang.value = ""
+          lebar.value = ""
+          tinggi.value = ""
+          luas.textContent = ""
+          keliling.textContent = ""
+          hasil.textContent = ""
+        }
   }
+  function hapus() {
+      panjang.value = ""
+      lebar.value = ""
+      tinggi.value = ""
+			luas.textContent = ""
+			keliling.textContent = ""
+			hasil.textContent = ""
+		}
 </script>
 @endsection

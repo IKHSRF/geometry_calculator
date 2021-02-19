@@ -60,9 +60,18 @@
               placeholder="Tinggi"
             />
           </div>
-          <div class="text-center">
-            <button onclick="hitung()" class="btn btn-primary">Hitung</button>
-          </div>
+          <div class="row d-flex justify-content-center">
+                <div class="text-center mr-4">
+                  <button onclick="hitung()" class="btn btn-primary">
+                    Hitung
+                  </button>
+                </div>
+                <div class="text-center">
+                  <button onclick="hapus()" class="btn btn-danger">
+                    Hapus
+                  </button>
+                </div>
+              </div>
           <div class="form-row d-flex justify-content-center">
             <div class="col-lg-4">
               <div class="info">
@@ -82,6 +91,15 @@
                 </div>
               </div>
             </div>
+            <div class="col-lg-4">
+              <div class="info">
+                <div class="email">
+                  <i class="icofont-calculator-alt-2"></i>
+                  <h4>Hasil</h4>
+                  <p id="hasil"></p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
     </div>
@@ -92,13 +110,49 @@
   var jari = document.getElementById('r')
   var tinggi = document.getElementById('t')
   var phi = 22/7
-
+  var r
+  var t
+  var s
 
   var luas = document.getElementById('luas')
   var keliling = document.getElementById('keliling')
+  var hasil = document.getElementById('hasil')
+
   function hitung() {
-      luas.textContent = phi * Number(jari.value) * (Number(jari.value) +  Math.sqrt(Number(jari.value) * Number(jari.value) + Number(tinggi.value) * Number(tinggi.value)))
-      keliling.textContent = 1 / 3 * phi * Number(jari.value) * Number(jari.value) * Number(tinggi.value)
+      r = Number(jari.value) * Number(jari.value)
+      t = Number(tinggi.value) * Number(tinggi.value)
+      s = Math.sqrt(r + t)
+      luas.textContent = phi * Number(jari.value) * (Number(jari.value) + s)
+      keliling.textContent = 1/3 * 22/7 * Number(jari.value) * Number(jari.value) * Number(tinggi.value)
+      hasil.innerHTML=
+        "<strong>Penyelesaian:</strong>" +
+        "<br>s = √( r x r )+( t x t )" + 
+        "<br>s = " + s +
+        "<br>L = 22/7 x r x ( r + s )" + 
+        "<br>L = 22/7 " + ' x ' + Number(jari.value) + ' x ' + '(' + Number(jari.value) + ' + ' + s + ')' + 
+        "<br>L = " + luas.textContent + "cm<sup>3</sup>" +
+        "<br>V = 1/3 x 22/7 x r x r x t" +
+        "<br>V = 1/3 x 22/7" + ' x ' + Number(jari.value) + ' x ' + Number(jari.value) + ' x ' + Number(tinggi.value) + 
+        "<br>V = " + keliling.textContent + " cm<sup>3</sup>"
+
+
+        if (tinggi.value != "" && tinggi.value > 0 && jari.value != "" && jari.value > 0) {
+          return true
+        } else {
+          alert("Masukkan nilai yang lebih besar dari 0")
+          jari.value = ""
+          tinggi.value = ""
+          luas.textContent = ""
+          keliling.textContent = ""
+          hasil.textContent = ""
+        }
   }
+  function hapus() {
+			jari.value = ""
+      tinggi.value = ""
+			luas.textContent = ""
+			keliling.textContent = ""
+			hasil.textContent = ""
+		}
 </script>
 @endsection

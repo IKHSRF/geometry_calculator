@@ -133,7 +133,6 @@
 	    "<br>panjang (p): " + panjang.value +
 	    "<br>lebar (l): " + lebar.value +
 	    "<br>tinggi (t): " + tinggi.value +
-
 			"<br><u>luas (L):</u>" +
 			"<br>L = 2 x (p x l + p x t + l x t)" +
 			"<br>L = 2 x (" + panjang.value + " x " + lebar.value + " + " + panjang.value + " x " + tinggi.value + " + " + lebar.value + " x " + tinggi.value + ")" +

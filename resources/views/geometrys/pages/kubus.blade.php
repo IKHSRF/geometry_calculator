@@ -48,9 +48,18 @@
               placeholder="Sisi"
             />
           </div>
-          <div class="text-center">
-            <button onclick="hitung()" class="btn btn-primary">Hitung</button>
-          </div>
+          <div class="row d-flex justify-content-center">
+                <div class="text-center mr-4">
+                  <button onclick="hitung()" class="btn btn-primary">
+                    Hitung
+                  </button>
+                </div>
+                <div class="text-center">
+                  <button onclick="hapus()" class="btn btn-danger">
+                    Hapus
+                  </button>
+                </div>
+              </div>
           <div class="form-row d-flex justify-content-center">
             <div class="col-lg-4">
               <div class="info">
@@ -70,6 +79,15 @@
                 </div>
               </div>
             </div>
+            <div class="col-lg-4">
+              <div class="info">
+                <div class="email">
+                  <i class="icofont-calculator-alt-2"></i>
+                  <h4>Hasil</h4>
+                  <p id="hasil"></p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
     </div>
@@ -81,9 +99,37 @@
 
   var luas = document.getElementById('luas')
   var keliling = document.getElementById('keliling')
+  var hasil = document.getElementById('hasil')
+  var s
+
   function hitung() {
-      luas.textContent = 6 * Number(sisi.value) * Number(sisi.value)
+      s = Number(sisi.value) * Number(sisi.value)
+      luas.textContent = 6 * s
       keliling.textContent = Number(sisi.value) * Number(sisi.value) * Number(sisi.value)
-  }
+      hasil.innerHTML=
+        "<strong>Penyelesaian:</strong>" +
+        "<br>L = 6 x s</u>" +
+        "<br>L = " + luas.textContent +
+        "<br>V = s x s x s" + 
+        "<br>V = " + Number(sisi.value) + ' x ' + Number(sisi.value) + ' x ' + Number(sisi.value) + 
+        "<br>V = " + keliling.textContent
+
+        if (sisi.value != "" && sisi.value > 0) {
+          return true
+        } else {
+          alert("Masukkan nilai yang lebih besar dari 0")
+          sisi.value = ""
+          luas.textContent = ""
+          keliling.textContent = ""
+          hasil.InnerHTML = ""
+        }
+      }
+
+      function hapus() {
+			sisi.value = ""
+			luas.textContent = ""
+			keliling.textContent = ""
+			hasil.InnerHTML = ""
+		}
 </script>
 @endsection
