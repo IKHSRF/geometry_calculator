@@ -67,9 +67,18 @@
               placeholder="Tinggi"
             />
           </div>
-          <div class="text-center">
-            <button onclick="hitung1()" class="btn btn-primary">Hitung</button>
-          </div>
+          <div class="row d-flex justify-content-center">
+                <div class="text-center mr-4">
+                  <button onclick="hitung1()" class="btn btn-primary">
+                    Hitung
+                  </button>
+                </div>
+                <div class="text-center">
+                  <button onclick="hapus1()" class="btn btn-danger">
+                    Hapus
+                  </button>
+                </div>
+              </div>
           <div class="form-row d-flex justify-content-center">
             <div class="col-lg-4">
               <div class="info">
@@ -77,6 +86,15 @@
                   <i class="icofont-calculator-alt-2"></i>
                   <h4>Luas</h4>
                   <p id="luas"></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="info">
+                <div class="email">
+                  <i class="icofont-calculator-alt-2"></i>
+                  <h4>Hasil</h4>
+                  <p id="hasil1"></p>
                 </div>
               </div>
             </div>
@@ -122,9 +140,18 @@
               placeholder="sisi (CA)"
             />
           </div>
-          <div class="text-center">
-            <button onclick="hitung2()" class="btn btn-primary">Hitung</button>
-          </div>
+          <div class="row d-flex justify-content-center">
+                <div class="text-center mr-4">
+                  <button onclick="hitung2()" class="btn btn-primary">
+                    Hitung
+                  </button>
+                </div>
+                <div class="text-center">
+                  <button onclick="hapus2()" class="btn btn-danger">
+                    Hapus
+                  </button>
+                </div>
+              </div>
           <div class="form-row d-flex justify-content-center">
             <div class="col-lg-4">
               <div class="info">
@@ -132,6 +159,15 @@
                   <i class="icofont-calculator-alt-2"></i>
                   <h4>Keliling</h4>
                   <p id="keliling"></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="info">
+                <div class="email">
+                  <i class="icofont-calculator-alt-2"></i>
+                  <h4>Hasil</h4>
+                  <p id="hasil2"></p>
                 </div>
               </div>
             </div>
@@ -146,10 +182,40 @@
   var b = document.getElementById('b')
   var t = document.getElementById('t')
   var luas = document.getElementById('luas')
+  var hasil1 = document.getElementById('hasil1')
   
   function hitung1() {
       luas.textContent = 1/2 * (Number(a.value) + Number(b.value)) * t.value
+      hasil1.innerHTML =
+			"<strong>Penyelesaian:</strong>" +
+			"<br><u>diketahui:</u>" +
+			"<br>sisi sejajar (a): " + a.value +
+			"<br>sisi sejajar (b): " + b.value +
+			"<br>tinggi (t): " + t.value +
+			"<br><u>luas (L):</u>" +
+			"<br>L = &#189; x (a + b) x t" +
+			"<br>L = " + "&#189; x (" + a.value + " + " + b.value + ")" + " x " + t.value +
+			"<br>L = " + "&#189; x " + (Number(a.value) + Number(b.value)) + " x " + t.value +
+			"<br>L = " + "&#189; x " + ((Number(a.value) + Number(b.value)) * t.value) +
+			"<br>L = " + luas.textContent
+			if (a.value != "" && b.value != "" && t.value && a.value > 0 && b.value > 0 && c.value) {
+				return true
+			} else {
+				alert("Masukkan nilai yang lebih besar dari 0")
+				a.value = ""
+				b.value = ""
+				t.value = ""
+				luas.textContent = ""
+				hasil1.innerHTML = ""
+			}
   }
+  function hapus1() {
+			a.value = ""
+			b.value = ""
+			t.value = ""
+			luas.textContent = ""
+			hasil1.innerHTML = ""
+		}
 </script>
 <script type="text/javascript">
   var ab = document.getElementById('ab')
@@ -157,8 +223,42 @@
   var cd = document.getElementById('cd')
   var da = document.getElementById('da')
   var keliling = document.getElementById('keliling')
+  var hasil2 = document.getElementById('hasil2')
+
   function hitung2() {
       keliling.textContent = Number(ab.value) + Number(bc.value) + Number(cd.value) + Number(da.value)
+      hasil2.innerHTML =
+			"<strong>Penyelesaian:</strong>" +
+			"<br><u>diketahui:</u>" +
+			"<br>sisi (a): " + ab.value +
+			"<br>sisi (b): " + bc.value +
+			"<br>sisi (c): " + cd.value +
+			"<br>sisi (d): " + da.value +
+			"<br><u>luas (L):</u>" +
+			"<br>K = a + b + c + d" +
+			"<br>K = " +  ab.value + " + " + bc.value + " + " + cd.value + " + " + da.value +
+			"<br>K = " +  (Number(ab.value) + Number(bc.value)) + " + " + cd.value + " + " + da.value +
+			"<br>K = " +  (Number(ab.value) + Number(bc.value) + Number(cd.value)) + " + " + da.value +
+			"<br>K = " + keliling.textContent
+			if (ab.value != "" && bc.value != "" && cd.value != "" && da.value != "" && ab.value > 0 && bc.value > 0 && cd.value > 0 && da.value > 0) {
+				return true
+			} else {
+				alert ("Masukkan nilai yang lebih besar dari 0")
+				ab.value = ""
+				bc.value = ""
+				cd.value = ""
+				da.value = ""
+				keliling.textContent = ""
+				hasil2.innerHTML = ""
+			}
   }
+  function hapus2() {
+			ab.value = ""
+			bc.value = ""
+			cd.value = ""
+			da.value = ""
+			keliling.textContent = ""
+			hasil2.innerHTML = ""
+		}
 </script>
 @endsection

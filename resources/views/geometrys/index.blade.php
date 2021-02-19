@@ -72,7 +72,8 @@
               <div class="icon"><i class="ri-stack-line"></i></div>
               <h4 class="title"><a href="/geometri/kubus">Kubus</a></h4>
               <p class="description">
-               Menghitung luas dan keliling kubus
+                <i>luas (L) = 6 × s × s</i><br>
+                <i>volume (V) =  s × s × s</i>
               </p>
             </div>
           </div>
@@ -85,7 +86,8 @@
               <div class="icon"><i class="ri-palette-line"></i></div>
               <h4 class="title"><a href="/geometri/balok">Balok</a></h4>
               <p class="description">
-                Menghitung luas dan keliling balok
+                <i>luas = 2 x ( p x l + p x t + l x t)</i><br>
+                <i>volume = p x l x t</i>
               </p>
             </div>
           </div>
@@ -98,7 +100,8 @@
               <div class="icon"><i class="ri-command-line"></i></div>
               <h4 class="title"><a href="/geometri/tabung">Tabung</a></h4>
               <p class="description">
-                Mehitung luas dan keliling tabung
+                <i>luas (L) = 2 × π × r × (r + t)</i><br>
+                <i>volume (V) = π × r × r × t</i>
               </p>
             </div>
           </div>
@@ -111,7 +114,8 @@
               <div class="icon"><i class="ri-fingerprint-line"></i></div>
               <h4 class="title"><a href="/geometri/kerucut">Kerucut</a></h4>
               <p class="description">
-                Menghitung luas dan keliling kerucut
+                <i>luas (L) = π × r x (r + s)</i><br>
+                <i>volume (V) = 1 / 3 x π × r x r x t</i>
               </p>
             </div>
           </div>

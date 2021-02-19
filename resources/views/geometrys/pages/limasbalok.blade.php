@@ -19,7 +19,8 @@
   <section id="contact" class="contact">
     <div class="container" data-aos="fade-up">
       <div class="section-title">
-        <div class="row">
+      <div class="row">
+
         </div>
       </div>
       <div class="row mt-5 d-flex justify-content-center">
