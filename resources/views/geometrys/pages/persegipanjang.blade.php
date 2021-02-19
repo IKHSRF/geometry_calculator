@@ -58,9 +58,18 @@
               placeholder="Lebar"
             />
           </div>
-          <div class="text-center">
-            <button onclick="hitung()" class="btn btn-primary">Hitung</button>
-          </div>
+          <div class="row d-flex justify-content-center">
+                <div class="text-center mr-4">
+                  <button onclick="hitung()" class="btn btn-primary">
+                    Hitung
+                  </button>
+                </div>
+                <div class="text-center">
+                  <button onclick="hapus()" class="btn btn-danger">
+                    Hapus
+                  </button>
+                </div>
+              </div>
           <div class="form-row d-flex justify-content-center">
             <div class="col-lg-4">
               <div class="info">
@@ -81,6 +90,15 @@
                 </div>
               </div>
             </div>
+            <div class="col-lg-4">
+              <div class="info">
+                <div class="email">
+                  <i class="icofont-calculator-alt-2"></i>
+                  <h4>Hasil</h4>
+                  <p id="hasil"></p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -93,9 +111,42 @@
   var lebar = document.getElementById("l");
   var luas = document.getElementById("luas");
   var keliling = document.getElementById("keliling");
+  var hasil = document.getElementById("hasil");
+
   function hitung() {
     luas.textContent = Number(panjang.value) * Number(lebar.value);
     keliling.textContent = 2 * (Number(panjang.value) + Number(lebar.value));
+    hasil.innerHTML=
+			"<strong>Penyelesaian:</strong>" +
+			"<br><u>diketahui:</u>" +
+			"<br>panjang (p): " + panjang.value +
+			"<br>lebar (l): " + lebar.value +
+			"<br><u>luas (L):</u>" +
+			"<br>L = p x l" +
+			"<br>L = " + panjang.value + " x " + lebar.value +
+			"<br>L= " + luas.textContent +
+			"<br><u>keliling (K):</u>" +
+			"<br>K = 2 x (p + l)" +
+			"<br>K = 2 x (" + panjang.value + " + " + lebar.value + ")" +
+			"<br>K = 2 x (" + (Number(panjang.value) + Number(lebar.value)) + ")" +
+			"<br>K = " + keliling.textContent 
+			if (panjang.value != "" && lebar.value != "" && panjang.value > 0 && lebar.value > 0) {
+				return true
+			} else {
+				alert("Masukkan nilai yang lebih besar dari 0")
+				panjang.value = ""
+				lebar.value = ""
+				luas.textContent = ""
+				keliling.textContent = ""
+				hasil.innerHTML = ""
+			}
   }
+  function hapus() {
+			panjang.value = ""
+			lebar.value = ""
+			luas.textContent = ""
+			keliling.textContent = ""
+			hasil.innerHTML = ""
+		}
 </script>
 @endsection

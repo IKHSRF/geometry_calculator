@@ -58,9 +58,18 @@
               placeholder="Diagonal 2"
             />
           </div>
-          <div class="text-center">
-            <button onclick="hitung1()" class="btn btn-primary">Hitung</button>
-          </div>
+          <div class="row d-flex justify-content-center">
+                <div class="text-center mr-4">
+                  <button onclick="hitung1()" class="btn btn-primary">
+                    Hitung
+                  </button>
+                </div>
+                <div class="text-center">
+                  <button onclick="hapus1()" class="btn btn-danger">
+                    Hapus
+                  </button>
+                </div>
+              </div>
           <div class="form-row d-flex justify-content-center">
             <div class="col-lg-4">
               <div class="info">
@@ -68,6 +77,15 @@
                   <i class="icofont-calculator-alt-2"></i>
                   <h4>Luas</h4>
                   <p id="luas"></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="info">
+                <div class="email">
+                  <i class="icofont-calculator-alt-2"></i>
+                  <h4>Hasil</h4>
+                  <p id="hasil1"></p>
                 </div>
               </div>
             </div>
@@ -86,16 +104,34 @@
               placeholder="sisi"
             />
           </div>
-          <div class="text-center">
-            <button onclick="hitung2()" class="btn btn-primary">Hitung</button>
+          <div class="row d-flex justify-content-center">
+            <div class="text-center mr-4">
+              <button onclick="hitung2()" class="btn btn-primary">
+                Hitung
+              </button>
+            </div>
+            <div class="text-center">
+              <button onclick="hapus2()" class="btn btn-danger">
+                Hapus
+              </button>
+            </div>
           </div>
           <div class="form-row d-flex justify-content-center">
             <div class="col-lg-4">
               <div class="info">
                 <div class="email">
                   <i class="icofont-calculator-alt-2"></i>
-                  <h4>Keliling</h4>
+                  <h4>Luas</h4>
                   <p id="keliling"></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="info">
+                <div class="email">
+                  <i class="icofont-calculator-alt-2"></i>
+                  <h4>Hasil</h4>
+                  <p id="hasil2"></p>
                 </div>
               </div>
             </div>
@@ -109,15 +145,66 @@
   var d1 = document.getElementById('d1')
   var d2 = document.getElementById('d2')
   var luas = document.getElementById('luas')
+  var hasil1 = document.getElementById('hasil1')
+
   function hitung1() {
     luas.textContent = 1/2 * Number(d1.value) * Number(d2.value)
+    hasil1.innerHTML =
+			"<strong>Penyelesaian:</strong>" +
+			"<br><u>diketahui:</u>" +
+			"<br>diagonal (d1): " + d1.value +
+			"<br>diagonal (d2): " + d2.value +
+			"<br><u>luas (L):</u>" +
+			"<br>L = &#189; x d1 x d2" +
+			"<br>L = " + "&#189; x " + d1.value + " x " + d2.value +
+			"<br>L = " + "&#189; x " + (Number(d1.value) * Number(d2.value)) +
+			"<br>L = " + luas.textContent
+			
+			if (d1.value != "" && d2.value != "" && d1.value > 0 && d2.value > 0) {
+				return true
+			} else {
+				alert("Masukkan nilai yang lebih besar dari 0")
+				d1.value = ""
+				d2.value = ""
+				luas.textContent = ""
+				hasil1.innerHTML = ""
+			}
   }
+  function hapus1() {
+			d1.value = ""
+			d2.value = ""
+			luas.textContent = ""
+			hasil1.innerHTML = ""
+		}
 </script>
 <script type="text/javascript">
-  var s = document.getElementById('s')
+  var sisi = document.getElementById('s')
   var keliling = document.getElementById('keliling')
+  var hasil2 = document.getElementById('hasil2')
+
   function hitung2() {
     keliling.textContent = s.value * 4
+    hasil2.innerHTML =
+			"<strong>Penyelesaian:</strong>" +
+			"<br><u>diketahui:</u>" +
+			"<br>sisi (s): " + sisi.value +
+			"<br><u>keliling (K):</u>" +
+			"<br>K = s x 4" +
+			"<br>L = " + sisi.value + " x " + 4 +
+			"<br>L = " + keliling.textContent
+			if (sisi.value != "" && sisi.value > 0) {
+				return true
+			} else {
+				alert("Masukkan nilai yang lebih besar dari 0")
+				sisi.value = ""
+				keliling.textContent = ""
+				hasil2.innerHTML = ""
+			}
   }
+  function hapus2() {
+			sisi.value = ""
+			keliling.textContent = ""
+			hasil2.innerHTML = ""
+		}
 </script>
 @endsection
