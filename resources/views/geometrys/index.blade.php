@@ -232,7 +232,7 @@
             data-aos-delay="400">
             <div class="icon-box">
               <div class="icon"><i class="ri-command-line"></i></div>
-              <h4 class="title"><a href="/geometri/segitiga">segitiga</a></h4>
+              <h4 class="title"><a href="/geometri/segitiga">Segitiga</a></h4>
               <p class="description">
                 <i>luas (L) = &#189; x (alas x tinggi)</i></br>
                 <i>keliling (k) = sisi a + sisi b + sisi c</i>
@@ -276,7 +276,7 @@
             data-aos-delay="300">
             <div class="icon-box">
               <div class="icon"><i class="ri-palette-line"></i></div>
-              <h4 class="title"><a href="/geometri/layanglayang">Layang</a></h4>
+              <h4 class="title"><a href="/geometri/layanglayang">Layang-layang</a></h4>
               <p class="description">
                 <i>luas (L) = &#189; x diagonal (d1) x diagonal (d2)</i><br>
                 <i>keliling (k) = 2 x (a + c)</i>
